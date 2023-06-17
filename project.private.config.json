@@ -1,0 +1,6 @@
+{
+  "projectname": "gocargo_frontend",
+  "setting": {
+    "compileHotReLoad": true
+  }
+}
