@@ -1,4 +1,28 @@
 <!--index.wxml-->
 <view class="container">
-Hello world this is GOcargo
+  <view style="padding: 0 1rem">
+    master style sheet
+    <hr/>
+    <view class="h1">Header 1</view>
+    <view class="h2">Header 2</view>
+    <view class="h3">Header 3</view>
+    <hr/>
+    <view class="text-rating">rating only 4.9</view>
+    <hr/>
+    <view class="p">Lorem Ipsum is simply dummy
+    text of the printing and typesetting
+    industry. Lorem Ipsum has been the
+    industry's standard dummy.</view>
+    <hr/>
+    <view class="btn btn-primary">Find a car</view>
+    <hr/>
+    <view class="btn btn-primary">book</view>
+    <hr/>
+    <view class="card-grid">
+      <image src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="palceholder car image" class="card-image"/>
+      <image src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="palceholder car image" class="card-image"/>
+      <image src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="palceholder car image" class="card-image"/>
+      <image src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="palceholder car image" class="card-image"/>
+    </view>
+  </view>
 </view>
