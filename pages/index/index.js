@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    mode: "aspectFit",
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
@@ -46,6 +47,8 @@ Page({
     })
   },
   goToCarsIndex(){
-    
+    wx.switchTab({
+      url: '/pages/cars/index'
+    })
   }
 })

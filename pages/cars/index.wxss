@@ -1,1 +1,13 @@
 /* pages/cars/index.wxss */
+.index-bg-image{
+  position: absolute;
+  top:0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1601929862217-f1bf94503333?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80");
+  display: block;
+  background-position: -90px -120px;
+  background-size:170%;
+  background-repeat: no-repeat;
+}

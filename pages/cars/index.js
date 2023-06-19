@@ -1,5 +1,14 @@
 // pages/cars/index.js
 Page({
+  getInstance() {
+    if (typeof this.getTabBar === 'function' ) {
+      this.getTabBar((tabBar) => {
+        tabBar.setData({
+          selected: 0
+        })
+      })
+    }
+  },
 
   /**
    * Page initial data
@@ -26,7 +35,12 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    if (typeof this.getTabBar === 'function' &&
+        this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 0
+        })
+      }
   },
 
   /**
@@ -62,5 +76,10 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  goToCarsIndex(){
+    wx.switchTab({
+      url: '/pages/cars/index'
+    })
   }
 })

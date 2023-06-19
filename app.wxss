@@ -111,6 +111,11 @@ hr{
 .card-image{
   width: calc((100vw / 2) - 1.5rem);
   height: calc((100vw / 2) - 1.5rem);
-  object-fit:contain;
+  mode: "aspectfit";
   border-radius: 40rpx;
+}
+
+.navigation-bar{
+  display: block;
+  height: 90px;
 }
