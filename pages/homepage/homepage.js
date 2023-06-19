@@ -8,24 +8,9 @@ Page({
     city: '',
     brand: '',
     date: '',
-    today: ''
-  },
-  onCityInput: function(event) {
-    this.setData({
-      city: event.detail.value
-    });
-  },
-
-  onBrandInput: function(event) {
-    this.setData({
-      brand: event.detail.value
-    });
-  },
-
-  bindDateChange: function(event) {
-    this.setData({
-      date: e.detail.value
-    });
+    today: '',
+    startDate:"Start Date",
+    endDate:"End Date"
   },
 
   onSearch: function() {
@@ -51,8 +36,6 @@ Page({
       today: today
     });
   },
-
-
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -105,5 +88,31 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  formSubmit(e){
+    console.log(e)
+    const inputs = e.detail.value
+    const {city, brand, startDate, endDate} = inputs
+    wx.request({
+      url: `https://gocargo-rails.osc-fr1.scalingo.io/api/v1/cars`,
+      success(res){
+        wx.navigateTo({
+          url: `/pages/cars/index?city=${city}brand=${brand}startDate=${startDate}endDate=${endDate}`
+        })
+      }
+    })
+  },
+  bindStartDateChange(e){
+    const input = e.detail.value
+    this.setData({
+      startDate: input
+    })
+    console.log(this.data.startDate)
+  },
+  bindEndDateChange(e){
+    const input = e.detail.value
+    this.setData({
+      endDate: input
+    })
   }
 })
