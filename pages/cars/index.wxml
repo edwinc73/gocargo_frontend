@@ -1,3 +1,12 @@
 <view class="container">
-  <text class="h2">Available cars in</text>
+  <text class="h2">Available cars in {{city}}</text>
+  <view class="card-grid">
+    <view class="card" wx:for="{{cars}}">
+      <image src="{{item.car_image}}" class="card-image" mode="aspectFill" wx:key="key"/>
+      <view class="car-info">
+      <text class="p">{{item.car_model}}</text>
+      <view class="p light">5.0</view>
+      </view>
+    </view>
+  </view>
 </view>

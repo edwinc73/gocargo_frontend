@@ -3,5 +3,18 @@
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/cars/index",
+          "query": "city=Shanghai&brand=bmw&startDate=2023-06-21&endDate=2024-06-21",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }

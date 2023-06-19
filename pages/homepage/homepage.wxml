@@ -17,12 +17,12 @@
       </view>
       <view class="date-fields">
         <view class="input-field">
-          <picker name="start-date" mode="date" start="{{today}}" bindchange="bindStartDateChange">
+          <picker name="startDate" mode="date" start="{{today}}" bindchange="bindStartDateChange">
             <view class="p picker .startDate">{{startDate}}</view>
           </picker>
         </view>
         <view class="input-field">
-          <picker name="end-date" mode="date" start="{{today}}" bindchange="bindEndDateChange">
+          <picker name="endDate" mode="date" start="{{today}}" bindchange="bindEndDateChange">
             <view class="p picker endDate" id="endDate">{{endDate}}</view>
           </picker>
         </view>

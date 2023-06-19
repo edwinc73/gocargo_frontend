@@ -90,14 +90,18 @@ Page({
 
   },
   formSubmit(e){
-    console.log(e)
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
     wx.request({
       url: `https://gocargo-rails.osc-fr1.scalingo.io/api/v1/cars`,
       success(res){
+        wx.removeStorage({ key: 'cars' })
+        wx.setStorage({
+          key: "cars",
+          data: res.data
+        })
         wx.navigateTo({
-          url: `/pages/cars/index?city=${city}brand=${brand}startDate=${startDate}endDate=${endDate}`
+          url: `/pages/cars/index?city=${city}&brand=${brand}&startDate=${startDate}&endDate=${endDate}`
         })
       }
     })
@@ -107,7 +111,6 @@ Page({
     this.setData({
       startDate: input
     })
-    console.log(this.data.startDate)
   },
   bindEndDateChange(e){
     const input = e.detail.value

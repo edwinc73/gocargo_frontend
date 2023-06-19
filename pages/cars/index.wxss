@@ -11,3 +11,32 @@
   background-size:170%;
   background-repeat: no-repeat;
 }
+
+.card-grid{
+  margin-top: 30rpx;
+}
+
+.card-image{
+  background: rgb(51,51,51);
+background: linear-gradient(180deg, rgba(51,51,51,1) 0%, rgba(19,19,19,1) 76%);
+box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+position: relative;
+}
+
+/* .card-image::after{
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: orange;
+  mix-blend-mode:hard-light;
+  top: 0;
+  left: 0;
+} */
+
+.light{
+  margin-top: 4px;
+  color: #CACACA;
+  font-weight: 200;
+  font-size: 0.8rem;
+}
