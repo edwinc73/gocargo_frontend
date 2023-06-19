@@ -21,7 +21,7 @@
     "backgroundColor": "#1d1d1d",
     "list": [
       {
-      "pagePath": "pages/cars/index",
+      "pagePath": "pages/homepage/homepage",
       "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
     }, {
       "pagePath": "pages/bookings/show",
