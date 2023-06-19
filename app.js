@@ -12,6 +12,11 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+    wx.loadFontFace({
+      family: 'poppins',
+      source: 'url("https://github.com/itfoundry/Poppins/tree/master/products/Poppins-4.003-GoogleFonts-TTF")',
+      success: console.log("font loaded")
+    })
   },
   globalData: {
     userInfo: null

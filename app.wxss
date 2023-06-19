@@ -1,4 +1,9 @@
 /**app.wxss**/
+page{
+  background-color: #1d1d1d;
+  color: white;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -8,3 +13,104 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+/* text styles */
+
+.h1, .h2, .h3, .p{
+  font-family: "poppins";
+}
+
+.h1{
+  font-weight: 600;
+  line-height: 3.5rem;
+  font-size: 3rem;
+}
+
+.h2{
+  font-weight: 600;
+  line-height: 2.25rem;
+  font-size: 1.5rem;
+}
+
+.h3{
+  font-weight: 600;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+
+.text-rating{
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.p{
+  color: #CACACA;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-center{
+  text-align:center
+}
+
+.bg-white{
+  background-color: #fff;
+}
+
+.text-main-color{
+  color: var(--main-color);
+}
+
+.text-white{
+  color: white;
+}
+
+.text-main{
+  color: #FFA02A
+}
+
+/* button styles */
+
+.btn{
+  text-transform: capitalize;
+  width: fit-content;
+  padding: 17rpx 96rpx;
+  border-radius: 4px;
+  color: #1d1d1d;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn-primary{
+  background-color: #FFA02A;
+  font-family: "poppins";
+  font-weight: 600;
+  line-height: 64rpx;
+  font-size: 1.2rem;
+}
+
+/* spacer styling */
+hr{
+  width: 100%;
+  height: 1px;
+  display: block;
+  margin: 10px 0;
+}
+
+/* card styling*/
+
+.card-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.card-image{
+  width: calc((100vw / 2) - 1.5rem);
+  height: calc((100vw / 2) - 1.5rem);
+  object-fit:contain;
+  border-radius: 40rpx;
+}
