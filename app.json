@@ -1,7 +1,11 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/cars/index",
+    "pages/users/profile",
+    "pages/cars/show",
+    "pages/cars/new",
+    "pages/bookings/show"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -10,5 +14,19 @@
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [{
+      "pagePath": "pages/cars/index",
+      "text": "search"
+    }, {
+      "pagePath": "pages/bookings/show",
+      "text": "bookings"
+    }]
+  },
+  "usingComponents": {}
 }

@@ -1,0 +1,7 @@
+<view class="container index-bg-image">
+
+<view class="h1">Ride in style</view>
+<input type="text" />
+
+<view class="btn btn-primary">find a car</view>
+</view>

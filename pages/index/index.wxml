@@ -14,7 +14,7 @@
     industry. Lorem Ipsum has been the
     industry's standard dummy.</view>
     <hr/>
-    <view class="btn btn-primary">Find a car</view>
+    <view class="btn btn-primary" bindtap="{{}}">Find a car</view>
     <hr/>
     <view class="btn btn-primary">book</view>
     <hr/>
