@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/homepage/homepage",
     "pages/index/index",
     "pages/cars/index",
     "pages/users/profile",

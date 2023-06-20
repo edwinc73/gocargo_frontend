@@ -1,0 +1,30 @@
+<!--pages/homepage/homepage.wxml-->
+<view class="banner">
+  <view class="container">
+    <text class="h1">Ride in style</text>
+
+    <view class="search-bar">
+      <view class="input-field">
+        <input type="text" placeholder="City" bindinput="onCityInput" />
+      </view>
+
+      <view class="input-field">
+        <input type="text" placeholder="Car Brand" bindinput="onBrandInput" />
+      </view>
+      <view class="date-fields">
+        <view class="input-field">
+          <picker mode="date" start="{{today}}" bindchange="bindDateChange">
+            <view class="p picker">Start Date</view>
+          </picker>
+        </view>
+        <view class="input-field">
+          <picker mode="date" start="{{today}}" bindchange="bindDateChange">
+            <view class="p picker">End Date</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+
+    <button class="btn-primary" bindtap="onSearch">Search</button>
+  </view>
+</view>
