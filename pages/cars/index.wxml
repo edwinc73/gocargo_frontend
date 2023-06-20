@@ -1,9 +1,12 @@
-<view class="navigation-bar">
-</view>
-<view class="index-bg-image"></view>
 <view class="container">
-  <view class="h1">Ride in style</view>
-<input type="text" />
-
-<view class="btn btn-primary">find a car</view>
+  <text class="h2">Available cars in {{city}}</text>
+  <view class="card-grid">
+    <view class="card" wx:for="{{cars}}">
+      <image src="{{item.car_image}}" class="card-image" mode="aspectFill" wx:key="key"/>
+      <view class="car-info">
+      <text class="p">{{item.car_model}}</text>
+      <view class="p light">5.0</view>
+      </view>
+    </view>
+  </view>
 </view>

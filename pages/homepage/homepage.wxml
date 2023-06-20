@@ -1,30 +1,34 @@
 <!--pages/homepage/homepage.wxml-->
 <view class="banner">
   <view class="container">
-    <text class="h1">Ride in style</text>
-
+  <text class="p text-white">GoCarGo</text>
+  <view class="title-container">
+    <text class="h1 text-left">Ride in style</text>
+  </view>
+  <form bindsubmit="formSubmit" class="search-form">
     <view class="search-bar">
-      <view class="input-field">
-        <input type="text" placeholder="City" bindinput="onCityInput" />
+      <view class="input-field city">
+      <image src="/images/icons/tabBar/tab-bar-icon-inactive-search.png" mode="aspectFit"/>
+        <input type="text" name="city" placeholder="City" placeholder-style="color:#eee" class="input" />
       </view>
-
-      <view class="input-field">
-        <input type="text" placeholder="Car Brand" bindinput="onBrandInput" />
+      <view class="input-field brand">
+        <image src="/images/icons/tabBar/tab-bar-icon-inactive-search.png" mode="aspectFit"/>
+        <input type="text" name="brand" placeholder="Car Brand" placeholder-style="color:#eee" />
       </view>
       <view class="date-fields">
         <view class="input-field">
-          <picker mode="date" start="{{today}}" bindchange="bindDateChange">
-            <view class="p picker">Start Date</view>
+          <picker name="startDate" mode="date" start="{{today}}" bindchange="bindStartDateChange">
+            <view class="p picker .startDate">{{startDate}}</view>
           </picker>
         </view>
         <view class="input-field">
-          <picker mode="date" start="{{today}}" bindchange="bindDateChange">
-            <view class="p picker">End Date</view>
+          <picker name="endDate" mode="date" start="{{today}}" bindchange="bindEndDateChange">
+            <view class="p picker endDate" id="endDate">{{endDate}}</view>
           </picker>
         </view>
-      </view>
+      </view> 
     </view>
-
-    <button class="btn-primary" bindtap="onSearch">Search</button>
+      <button class="btn btn-primary form-submit" form-type="submit">Find A Car</button>
+    </form>
   </view>
 </view>

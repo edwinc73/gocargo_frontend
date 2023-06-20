@@ -1,27 +1,34 @@
 // pages/cars/index.js
 Page({
-  getInstance() {
-    if (typeof this.getTabBar === 'function' ) {
-      this.getTabBar((tabBar) => {
-        tabBar.setData({
-          selected: 0
-        })
-      })
-    }
-  },
-
   /**
    * Page initial data
    */
   data: {
-
+    
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    const page = this
+    this.setData({
+      city: options.city,
+      brand: options.brand,
+      startDate: options.startDate,
+      endDate: options.endDate
+    })
 
+    wx.getStorage({
+      key: 'cars',
+      success (res) {
+        console.log("got storage")
+        const cityFiltered = res.data.cars.filter( car => car.city.toLowerCase() == page.data.city.toLowerCase())
+        page.setData({
+          cars: cityFiltered
+        })
+      }
+    })
   },
 
   /**
@@ -35,12 +42,6 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    if (typeof this.getTabBar === 'function' &&
-        this.getTabBar()) {
-        this.getTabBar().setData({
-          selected: 0
-        })
-      }
   },
 
   /**
