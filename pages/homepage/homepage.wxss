@@ -1,0 +1,63 @@
+/* pages/homepage/homepage.wxss */
+
+.banner {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1601929862217-f1bf94503333?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
+  background-position: center;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+  height: auto;
+  margin-bottom: 320rpx;
+  width: 80%;
+}
+
+.input-field {
+  margin-bottom: 15rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  background-color:rgba(152, 151, 151, 0.65);
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+  width: 100%;
+}
+
+.input-field input[type="text"] {
+  font-size: 24rpx;
+}
+
+.date-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.date-fields .input-field {
+  margin-right: 10rpx;
+}
+
+.date-fields .input-field:last-child {
+  margin-right: 0;
+}
+
+.date-fields input[type="date"] {
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.picker {
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
