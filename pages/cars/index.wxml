@@ -1,0 +1,9 @@
+<view class="navigation-bar">
+</view>
+<view class="index-bg-image"></view>
+<view class="container">
+  <view class="h1">Ride in style</view>
+<input type="text" />
+
+<view class="btn btn-primary">find a car</view>
+</view>

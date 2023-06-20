@@ -2,14 +2,34 @@
   "pages":[
     "pages/homepage/homepage",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/cars/index",
+    "pages/users/profile",
+    "pages/cars/show",
+    "pages/cars/new",
+    "pages/bookings/show",
+    "custom-tab-bar/index"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationStyle": "custom"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#1d1d1d",
+    "list": [
+      {
+      "pagePath": "pages/cars/index",
+      "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
+    }, {
+      "pagePath": "pages/bookings/show",
+      "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
+    },{
+      "pagePath": "pages/users/profile",
+      "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
+    }]
+  },
+  "usingComponents": {}
 }

@@ -1,0 +1,85 @@
+// pages/cars/index.js
+Page({
+  getInstance() {
+    if (typeof this.getTabBar === 'function' ) {
+      this.getTabBar((tabBar) => {
+        tabBar.setData({
+          selected: 0
+        })
+      })
+    }
+  },
+
+  /**
+   * Page initial data
+   */
+  data: {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad(options) {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady() {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+        this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 0
+        })
+      }
+  },
+
+  /**
+   * Lifecycle function--Called when page hide
+   */
+  onHide() {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page unload
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * Page event handler function--Called when user drop down
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * Called when page reach bottom
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * Called when user click on the top right corner to share
+   */
+  onShareAppMessage() {
+
+  },
+  goToCarsIndex(){
+    wx.switchTab({
+      url: '/pages/cars/index'
+    })
+  }
+})

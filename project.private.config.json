@@ -2,5 +2,18 @@
   "projectname": "gocargo_frontend",
   "setting": {
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "search page",
+          "pathName": "pages/cars/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }
