@@ -1,8 +1,14 @@
+<CustomNav />
 <view class="container">
+<view class="flex action-bar">
+  <image src="/images/icons/filter-icon.png" mode="" class="actions filter" />
+  <image src="/images/icons/bell.png" mode="" class="actions bell" />
+</view>
   <text class="h2">Available cars in {{city}}</text>
   <view class="card-grid">
-    <view class="card" wx:for="{{cars}}">
-      <image src="{{item.car_image}}" class="card-image" mode="aspectFill" wx:key="key"/>
+    <view class="card" wx:for="{{cars}}" bindtap="goToCarsShow" wx:key="key" data-id="{{item.id}}">
+      <!-- <image src="{{item.car_image}}" class="card-image" mode="aspectFill" wx:key="key"/> -->
+      <image src="https://images.unsplash.com/photo-1612368764459-0446df792e36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-image" mode="aspectFill" wx:key="key"/>
       <view class="car-info">
       <text class="p">{{item.car_model}}</text>
       <view class="p light">5.0</view>

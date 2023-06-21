@@ -1,0 +1,29 @@
+/* components/custom-nav/custom-nav.wxss */
+.back-btn-container{
+  margin: 42px 0 0 20px;
+  width: 35px;
+  height: 35px;
+  display: block;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-btn-container image{
+  width: 16px;
+  padding-right: 2px;
+}
+
+.home-btn-container image{
+  height: 22px;
+}
+
+.nav-bar-bg{
+  position: fixed;
+  top: 0;
+  height: 90px;
+  width: 100%;
+  display: block;
+}

@@ -4,7 +4,7 @@ Component({
     color: "#1d1d1d",
     selectedColor: "#3cc51f",
     list: [{
-      pagePath: "/pages/homepage/homepage",
+      pagePath: "/pages/cars/homepage",
       iconPath: "/images/icons/tabBar/tab-bar-icon-inactive-search.png",
       selectedIconPath: "/images/icons/tabBar/tab-bar-icon-active-search.png"
     }, {

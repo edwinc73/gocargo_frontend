@@ -4,7 +4,8 @@ Page({
    * Page initial data
    */
   data: {
-    
+    nbFrontColor: '#000000',
+    nbBackgroundColor: '#ffffff',
   },
 
   /**
@@ -22,7 +23,6 @@ Page({
     wx.getStorage({
       key: 'cars',
       success (res) {
-        console.log("got storage")
         const cityFiltered = res.data.cars.filter( car => car.city.toLowerCase() == page.data.city.toLowerCase())
         page.setData({
           cars: cityFiltered
@@ -35,7 +35,6 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady() {
-
   },
 
   /**
@@ -78,9 +77,10 @@ Page({
   onShareAppMessage() {
 
   },
-  goToCarsIndex(){
-    wx.switchTab({
-      url: '/pages/cars/index'
+  goToCarsShow(e){
+    console.log(e.target.datase)
+    wx.navigateTo({
+      url: '/pages/cars/show?='
     })
   }
 })

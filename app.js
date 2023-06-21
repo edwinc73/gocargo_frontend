@@ -18,6 +18,6 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    tab_bar_path: ["pages/homepage/homepage", "pages/bookings/show", "pages/users/profile"]
   }
 })
