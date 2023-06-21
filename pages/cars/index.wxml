@@ -1,3 +1,4 @@
+<CustomNav />
 <view class="container">
 <view class="flex action-bar">
   <image src="/images/icons/filter-icon.png" mode="" class="actions filter" />

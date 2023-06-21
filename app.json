@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/homepage/homepage",
+    "pages/cars/homepage",
     "pages/index/index",
     "pages/cars/index",
     "pages/users/profile",
@@ -21,7 +21,7 @@
     "backgroundColor": "#1d1d1d",
     "list": [
       {
-      "pagePath": "pages/homepage/homepage",
+      "pagePath": "pages/cars/homepage",
       "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
     }, {
       "pagePath": "pages/bookings/show",
@@ -32,5 +32,6 @@
     }]
   },
   "usingComponents": {
+    "CustomNav": ".../../components/custom-nav/custom-nav"
   }
 }

@@ -77,9 +77,10 @@ Page({
   onShareAppMessage() {
 
   },
-  goToCarsShow(){
+  goToCarsShow(e){
+    console.log(e.target.datase)
     wx.navigateTo({
-      url: '/pages/cars/show'
+      url: '/pages/cars/show?='
     })
   }
 })
