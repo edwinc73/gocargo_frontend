@@ -40,3 +40,16 @@ position: relative;
   font-weight: 200;
   font-size: 0.8rem;
 }
+
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  width: 90%;
+  margin-bottom: 20rpx;
+}
+
+.custom-icon {
+  width: 40rpx;
+  height: 40rpx;
+}

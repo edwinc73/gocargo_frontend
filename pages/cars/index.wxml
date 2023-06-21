@@ -1,4 +1,10 @@
 <view class="container">
+  <view class="icon-container">
+    <image src="/images/icons/navBar/home-light.png" class="custom-icon"></image>
+    <image src="/images/icons/navBar/filter-light.png" class="custom-icon"></image>
+    <image src="/images/icons/navBar/bell-light.png" class="custom-icon"></image>
+  </view>
+
   <text class="h2">Available cars in {{city}}</text>
   <view class="card-grid">
     <view class="card" wx:for="{{cars}}">
