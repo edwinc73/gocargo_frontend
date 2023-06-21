@@ -31,5 +31,6 @@
       "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
     }]
   },
-  "usingComponents": {}
+  "usingComponents": {
+  }
 }
