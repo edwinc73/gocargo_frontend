@@ -35,7 +35,7 @@ Page({
       today: today,
       startDate: dates[0],
       endDate: dates[1],
-      days: days == 0 ? 1 : days
+      days: Math.ceil(days)
     });
     
     wx.request({
@@ -97,24 +97,29 @@ Page({
 
   },
   confirmBooking(){
-    console.log("confirm booking?")
+    const booking = {
+      start_date: startDate,
+      return_date: endDates
+      // total_price: 
+    }
   },
   bindStartDateChange(e){
     const input = e.detail.value
-    const days = (new Date(this.data.endDate) - new Date(this.data.startDate)) / 86400000 + 1
+    const days = (new Date(this.data.endDate) - new Date(this.data.startDate)) / 86400000
     console.log(days)
     this.setData({
       startDate: input,
-      days: days
+      days: Math.ceil(days)
+      // total_price
     })
     getApp().globalData.dates[0] = this.data.startDate
   },
   bindEndDateChange(e){
     const input = e.detail.value
-    const days = (new Date(this.data.endDate) - new Date(this.data.startDate)) / 86400000 + 1
+    const days = (new Date(this.data.endDate) - new Date(this.data.startDate)) / 86400000
     this.setData({
       endDate: input,
-      days: days
+      days: Math.ceil(days)
     })
     console.log(days)
     getApp().globalData.dates[1] = this.data.endDate
