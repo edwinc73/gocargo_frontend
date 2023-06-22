@@ -1,0 +1,22 @@
+hr {
+  border: none;
+  border-top: 1px dashed white;
+  border-width: 0.11rem;
+}
+
+.date-field{
+  display: flex;
+  flex-direction: column;
+}
+.picker{
+  color: white;
+}
+
+picker{
+  width: 100px;
+  height: 50px;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

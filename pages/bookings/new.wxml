@@ -1,0 +1,32 @@
+<view>
+  <view class="container w-100">
+    <view class="text-container">
+      <view class="Car Model">
+        <text class="h2">{{car.car_model}}</text>
+        <text class="p">car model<!--{{car.car_model}}--></text>
+      </view>
+      <view></view>
+      <image src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" mode="aspectFill" />
+    </view>
+    <hr/>
+    <view class="form-container w-100">
+    <form bindsubmit="confirmBooking">
+      <view class="date-fields">
+          <picker name="startDate" mode="date" start="{{today}}" bindchange="bindStartDateChange">
+            <view class="p picker startDate">{{startDate}}</view>
+          </picker>
+          <picker name="endDate" mode="date" start="{{today}}" bindchange="bindEndDateChange">
+            <view class="p picker endDate" id="endDate">{{endDate}}</view>
+          </picker>
+      </view>
+      <hr/>
+      <view>
+      Total Price: ¥{{days * car.price_per_day}}.00
+      </view>
+      <hr/>
+      <button class="btn btn-primary w-100" formType="submit">Confirm</button>
+    </form>
+    </view>
+  </view> 
+</view>
+<CustomNav />

@@ -8,9 +8,23 @@
     "miniprogram": {
       "list": [
         {
-          "name": "",
+          "name": "search result",
           "pathName": "pages/cars/index",
-          "query": "",
+          "query": "city=shanghai&brand=&startDate=&endDate=",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "show page",
+          "pathName": "pages/cars/show",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "confirm booking",
+          "pathName": "pages/bookings/new",
+          "query": "id=1",
           "launchMode": "default",
           "scene": null
         }

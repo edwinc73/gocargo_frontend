@@ -13,6 +13,10 @@ page{
   padding: 200rpx 30px;
   box-sizing: border-box;
 } 
+
+.w-100{
+  width: 100%;
+}
 /* text styles */
 
 .h1, .h2, .h3, .p{
@@ -84,6 +88,14 @@ page{
   margin: 0 auto;
 }
 
+.btn-mini{
+  text-transform: capitalize;
+  padding: 18rpx 90rpx;
+  border-radius: 4px;
+  color: #1d1d1d;
+  text-align: center;
+}
+
 .btn-primary{
   background-color: #FFA02A;
   font-family: "poppins";
@@ -124,4 +136,8 @@ hr{
 
 .flex{
   display: flex;
+}
+
+.justify-between{
+  justify-content: space-between;
 }

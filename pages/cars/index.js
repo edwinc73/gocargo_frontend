@@ -24,6 +24,7 @@ Page({
       key: 'cars',
       success (res) {
         const cityFiltered = res.data.cars.filter( car => car.city.toLowerCase() == page.data.city.toLowerCase())
+        cityFiltered.map (car => car.id = 1)
         page.setData({
           cars: cityFiltered
         })
@@ -77,10 +78,11 @@ Page({
   onShareAppMessage() {
 
   },
+
   goToCarsShow(e){
-    console.log(e.target.datase)
+    const car_id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/cars/show?='
+      url: `/pages/cars/show?id=${car_id}`
     })
   }
 })
