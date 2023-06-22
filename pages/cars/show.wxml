@@ -1,2 +1,43 @@
-<!--pages/cars/show.wxml-->
-<text>pages/cars/show.wxml</text>
+<view>
+  <swiper indicator-dots="true">
+    <swiper-item>
+      <image src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" mode="aspectFill"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" mode="aspectFill"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" mode="aspectFill"/>
+    </swiper-item>
+  </swiper>
+  <view class="car-info">
+    <view class="container">
+      <view class=" flex w-100 justify-between">
+        <text class="rating">Top Rated</text>
+        <text>4.9</text>
+      </view>
+      <view class=" flex w-100 justify-between">
+      <text class="h2">{{car.car_model}}</text>
+        <text>fav</text>
+      </view>
+      <text class="p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt consequuntur cumque exercitationem iure.</text>
+      <view class="show-owner w-100">
+        <text class="h3">Owner</text>
+        <view class="flex w-100" style="margin-top:10px">
+          <image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" mode="aspectFill"/>
+          <view class="show-owner-detail flex">
+            <view class="p">{{owner.username}}</view>
+            <view>3.8</view>
+          </view>
+        </view>
+      </view>
+      <view class="show-cta flex w-100 justify-between">
+      <view>
+      <text>{{car.price_per_day}}.00</text><text>/Day</text>
+      </view>
+      <view class="btn-mini btn-primary" bindtap="addBooking" data-id="{{car.id}}">book</view>
+      </view>
+    </view>
+  </view>
+</view>
+<CustomNav />

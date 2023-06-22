@@ -5,7 +5,6 @@ Component({
   },
   ready() {
     let app = getApp()
-    console.log(getCurrentPages())
     if(getCurrentPages()[getCurrentPages().length - 1].route !== "pages/cars/homepage"){
       if (getCurrentPages().length > 1) {
         this.setData({

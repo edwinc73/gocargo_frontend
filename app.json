@@ -7,6 +7,7 @@
     "pages/cars/show",
     "pages/cars/new",
     "pages/bookings/show",
+    "pages/bookings/new",
     "custom-tab-bar/index"
   ],
   "window":{

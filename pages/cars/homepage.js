@@ -90,6 +90,7 @@ Page({
 
   },
   formSubmit(e){
+    const app =getApp()
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
     wx.request({
@@ -100,6 +101,7 @@ Page({
           key: "cars",
           data: res.data
         })
+        app.globalData.dates = [startDate, endDate] 
         wx.navigateTo({
           url: `/pages/cars/index?city=${city}&brand=${brand}&startDate=${startDate}&endDate=${endDate}`
         })
