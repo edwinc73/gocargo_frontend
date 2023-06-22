@@ -20,7 +20,7 @@ page{
 }
 
 .h1{
-  font-weight: 600;
+  font-weight: 700;
   line-height: 3.5rem;
   font-size: 2.5rem;
 }
@@ -111,11 +111,17 @@ hr{
 .card-image{
   width: calc((100vw / 2) - 1.5rem);
   height: calc((100vw / 2) - 1.5rem);
-  mode: "aspectfit";
+
   border-radius: 40rpx;
 }
 
 .navigation-bar{
   display: block;
   height: 90px;
+}
+
+/* flex */
+
+.flex{
+  display: flex;
 }

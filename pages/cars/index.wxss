@@ -52,4 +52,19 @@ position: relative;
 .custom-icon {
   width: 40rpx;
   height: 40rpx;
+=======
+.action-bar{
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 60rpx;
+}
+
+.actions{
+  height: 20px;
+  width: 19px;
+}
+
+.bell{
+  height: 22px;
+  width: 22px;
 }
