@@ -1,9 +1,10 @@
 <CustomNav />
 <view class="container">
-<view class="flex action-bar">
-  <image src="/images/icons/filter-icon.png" mode="" class="actions filter" />
-  <image src="/images/icons/bell.png" mode="" class="actions bell" />
-</view>
+  <view class="flex action-bar icon-container">
+  <!-- <image src="/images/icons/navBar/home-light.png" class="custom-icon"></image> -->
+    <image src="/images/icons/navBar/filter-light.png" mode="" class="actions filter custom-icon" />
+    <image src="/images/icons/navBar/bell-light.png" mode="" class="actions bell custom-icon" />
+  </view>
   <text class="h2">Available cars in {{city}}</text>
   <view class="card-grid">
     <view class="card" wx:for="{{cars}}" wx:for-item="car" bindtap="goToCarsShow" wx:key="key" data-id="{{car.id}}">
