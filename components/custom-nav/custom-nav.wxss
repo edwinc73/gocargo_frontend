@@ -27,3 +27,7 @@
   width: 100%;
   display: block;
 }
+
+.back-icon {
+  margin-top: 40rpx;
+}
