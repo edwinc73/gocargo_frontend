@@ -1,4 +1,4 @@
-// pages/cars/new.js
+// pages/bookings/index.js
 Page({
 
   /**
@@ -29,7 +29,7 @@ Page({
     if (typeof this.getTabBar === 'function' &&
     this.getTabBar()) {
     this.getTabBar().setData({
-      selected: 2
+      selected: 1
     })
   }
   },
