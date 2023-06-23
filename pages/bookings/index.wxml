@@ -1,2 +1,19 @@
-<!--pages/bookings/index.wxml-->
-<text>pages/bookings/index.wxml</text>
+<view class="container">
+  <view class="title text-left w-100 flex justify-between">
+    <text class="h2">Upcoming</text>
+    <view class="toggle" bindtap="toggleRenter">
+    <view wx:if="{{renter}}">rent</view>
+      <block wx:else>owner</block>
+    </view>
+  </view>
+  <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="key" class="w-100">
+    <view class="booking-card w-100">
+      <view class="flex w-100 justify-between">
+        <text>{{booking.car.car_model}}</text>
+        <view wx:if="{{booking.approved}}">Approved</view>
+          <block wx:else><text>Under Approval</text></block>
+      </view>
+    {{booking.start_date}}--- {{booking.return_date}}
+    </view>
+  </view>
+</view>
