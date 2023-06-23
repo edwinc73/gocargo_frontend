@@ -10,7 +10,6 @@
     "custom-tab-bar/index",
     "pages/eventsIndex/eventsIndex",
     "pages/bookings/new",
-    "custom-tab-bar/index",
     "pages/bookings/index"
   ],
   "window":{
