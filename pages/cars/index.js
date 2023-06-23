@@ -24,7 +24,7 @@ Page({
       key: 'cars',
       success (res) {
         const cityFiltered = res.data.cars.filter( car => car.city.toLowerCase() == page.data.city.toLowerCase())
-        cityFiltered.map (car => car.id = 1)
+        cityFiltered.map (car => car.id == page.options.id)
         page.setData({
           cars: cityFiltered
         })

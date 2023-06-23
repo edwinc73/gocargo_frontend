@@ -11,13 +11,15 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    const app = getApp()
     const page = this
     page.setData({
       id: options.id
     })
 
     wx.request({
-      url: `https://gocargo-rails.osc-fr1.scalingo.io/api/v1/cars/${this.data.id}`,
+      url: `${app.globalData.baseUrl}/api/v1/cars/${this.data.id}`,
+      header: app.globalData.header,
       success(res){
         page.setData({
           car: res.data.car,

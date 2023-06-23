@@ -1,17 +1,17 @@
 // pages/eventsIndex/eventsIndex.js
 Page({
-  const app = getApp()
   /**
    * 页面的初始数据
    */
   data: {
-
+    
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    const app = getApp()
     wx.request({
       url: `${app.globalData.baseUrl}/events`,
       method: 'GET',
