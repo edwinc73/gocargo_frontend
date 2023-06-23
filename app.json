@@ -8,7 +8,8 @@
     "pages/cars/new",
     "pages/bookings/show",
     "pages/bookings/new",
-    "custom-tab-bar/index"
+    "custom-tab-bar/index",
+    "pages/bookings/index"
   ],
   "window":{
     "navigationStyle": "custom"
@@ -25,7 +26,10 @@
       "pagePath": "pages/cars/homepage",
       "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
     }, {
-      "pagePath": "pages/bookings/show",
+      "pagePath": "pages/bookings/index",
+      "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
+    }, {
+      "pagePath": "pages/cars/new",
       "iconPath": "images/icons/tabBar/tab-bar-icon-active-calendar.png"
     },{
       "pagePath": "pages/users/profile",

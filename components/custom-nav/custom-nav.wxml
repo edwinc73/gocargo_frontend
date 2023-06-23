@@ -1,12 +1,12 @@
 <view class="nav-bar-bg">
   <view class="outer-container" bindtap="goBack" wx:if="{{showBackButton}}">
-    <view class="back-btn-container">
-    <image src="/images/icons/back.png" mode="aspectFit" />
+    <view class="btn-container">
+    <image src="/images/icons/back.png" mode="aspectFit" class="back-icon"/>
     </view>
   </view>
   <view class="outer-container" bindtap="goHome" wx:if="{{showHomeButton}}">
-    <view class="home-btn-container">
-    <image src="/images/icons/home.png" mode="aspectFit" />
+    <view class="btn-container">
+      <image src="/images/icons/navBar/home-light.png" class="home-icon"></image>
     </view>
   </view>
 </view>

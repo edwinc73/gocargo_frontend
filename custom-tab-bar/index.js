@@ -8,9 +8,13 @@ Component({
       iconPath: "/images/icons/tabBar/tab-bar-icon-inactive-search.png",
       selectedIconPath: "/images/icons/tabBar/tab-bar-icon-active-search.png"
     }, {
-      pagePath: "/pages/bookings/show",
+      pagePath: "/pages/bookings/index",
       iconPath: "/images/icons/tabBar/tab-bar-icon-inactive-calendar.png",
       selectedIconPath: "/images/icons/tabBar/tab-bar-icon-active-calendar.png"
+    },{
+      pagePath: "/pages/cars/new",
+      iconPath: "/images/icons/tabBar/tab-bar-icon-inactive-add.png",
+      selectedIconPath: "/images/icons/tabBar/tab-bar-icon-active-add.png"
     }, {
       pagePath: "/pages/users/profile",
       iconPath: "/images/icons/tabBar/tab-bar-icon-inactive-profile.png",
