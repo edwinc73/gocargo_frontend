@@ -1,7 +1,6 @@
 <CustomNav />
 <view class="container">
   <view class="flex action-bar icon-container">
-  <!-- <image src="/images/icons/navBar/home-light.png" class="custom-icon"></image> -->
     <image src="/images/icons/navBar/filter-light.png" mode="" class="actions filter custom-icon" />
     <image src="/images/icons/navBar/bell-light.png" mode="" class="actions bell custom-icon" />
   </view>
