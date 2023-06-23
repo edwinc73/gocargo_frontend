@@ -21,7 +21,7 @@
       </view>
       <hr/>
       <view>
-      Total Price: ¥{{days * car.price_per_day}}.00
+      Total Price: ¥{{total_price}}.00
       </view>
       <hr/>
       <button class="btn btn-primary w-100" formType="submit">Confirm</button>
