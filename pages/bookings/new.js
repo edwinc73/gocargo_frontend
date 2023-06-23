@@ -13,7 +13,7 @@ Page({
   onLoad(options) {
     const app = getApp()
     const page = this
-    app.globalData.dates = ["2023-06-22", "2023-06-23"] 
+    app.globalData.dates = ["2023-06-24", "2023-06-24"] 
     // the above line is only for development purpose 
     const dates = app.globalData.dates
     let date = new Date();
