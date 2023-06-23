@@ -12,7 +12,12 @@
 }
 
 .btn-container image{
+  height: 19px;
+}
+
+.btn-container .home-icon{
   height: 20px;
+  width: 20px;
 }
 
 .nav-bar-bg{
@@ -21,9 +26,4 @@
   height: 90px;
   width: 100%;
   display: block;
-}
-
-.custom-icon {
-  width: 20px;
-  height: 20px;
 }
