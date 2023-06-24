@@ -79,5 +79,7 @@ Page({
     wx.navigateTo({
       url: `/pages/bookings/new?id=${id}`
     })
-  }
+  },
+
+
 })
