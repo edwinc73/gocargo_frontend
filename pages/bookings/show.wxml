@@ -1,2 +1,37 @@
 <!--pages/bookings/show.wxml-->
-<text>pages/bookings/show.wxml</text>
+<view>
+  <view class="container w-100">
+    <view class="text-container flex w-100 justify-between">
+      <view class="car-model">
+        <text class="h2">{{car.car_model}}</text>
+      </view>
+      <view class="center">
+        <image src="https://cdn.imagin.studio/getimage?customer=img&make=BMW&modelFamily=328i&angle=1&paintId=2t" mode="aspectFill" />
+      </view>
+    </view>
+    <hr/>
+    <view class="form-container w-100">
+      <view class="align-center flex justify-between">
+        <text class="p bold">Booking dates</text>
+        <view class="date-fields">
+          <view class="p picker startDate">START: {{booking.startdate}}</view>
+          <view class="hash">|</view>
+          <view class="p picker endDate">RETRUN: {{booking.returndate}}</view>
+        </view>
+      </view>
+      <hr/>
+      <view class="align-center flex justify-between">
+        <text class="p bold">Total Price</text> 
+        <text class="h2">¥{{booking.total_price}}.00</text>
+      </view>
+      <hr/>
+    </view>
+    <view class="container align-center flex justify-between">
+      <view class="justify-center">
+        <button class="btn btn-primary" formType="apprvoed">Approve</button>
+        <button class="btn btn-cancel" formType="cancelled">Cancel</button>
+      </view>
+    </view>
+  </view> 
+</view>
+<CustomNav />
