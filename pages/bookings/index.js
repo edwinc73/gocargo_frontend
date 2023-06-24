@@ -25,6 +25,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const page = this
+    const app = getApp()
+    
     if (typeof this.getTabBar === 'function' &&
     this.getTabBar()) {
     this.getTabBar().setData({
@@ -32,10 +35,9 @@ Page({
     })
   }
 
-  const page = this
-
   wx.request({
-    url: 'https://gocargo-rails.osc-fr1.scalingo.io/api/v1/bookings',
+    url: `${app.globalData.baseUrl}/api/v1/bookings`,
+    header: app.globalData.header,
     success(res){
       page.setData({
         booking_owner: res.data.booking_owner,
