@@ -47,6 +47,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    console.log('hoempage onshow')
     if (typeof this.getTabBar === 'function' &&
     this.getTabBar()) {
       this.getTabBar().setData({
@@ -90,6 +91,7 @@ Page({
 
   },
   formSubmit(e){
+    console.log('form submit')
     const app = getApp()
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
@@ -98,6 +100,7 @@ Page({
       header: app.globalData.header,
       success(res){
         wx.removeStorage({ key: 'cars' })
+        console.log(11111, res)
         wx.setStorage({
           key: "cars",
           data: res.data
