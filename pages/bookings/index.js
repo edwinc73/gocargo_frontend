@@ -5,13 +5,14 @@ Page({
    * Page initial data
    */
   data: {
-    renter: false,
+    renter: false
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+
   },
 
   /**
@@ -44,6 +45,7 @@ Page({
         booking_renter: res.data.booking_renter,
         bookings: res.data.booking_owner
       })
+      console.log(page.data.bookings)
     }
   })
   },
