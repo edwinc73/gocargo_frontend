@@ -1,1 +1,9 @@
 /* pages/cars/new.wxss */
+.container{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input-field{
+  background-color: ;
+}
