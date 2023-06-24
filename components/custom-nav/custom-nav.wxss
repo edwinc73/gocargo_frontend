@@ -31,3 +31,7 @@
 .back-icon {
   margin-top: 40rpx;
 }
+
+.home-icon {
+  margin-top: 40rpx;
+}
