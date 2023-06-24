@@ -5,16 +5,28 @@ Page({
    * Page initial data
    */
   data: {
-
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    const page = this
+    page.setData({
+      id: options.id
+    })
 
+    wx.request({
+      url: `https://gocargo-rails.osc-fr1.scalingo.io/api/v1/cars/${this.data.id}`,
+      success(res){
+        page.setData({
+          car: res.data.car,
+          owner: res.data.owner
+        })
+      }
+    })
   },
-
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -26,7 +38,6 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
   },
 
   /**
@@ -62,5 +73,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  addBooking(e){
+    const id = this.data.id
+    wx.navigateTo({
+      url: `/pages/bookings/new?id=${id}`
+    })
   }
 })

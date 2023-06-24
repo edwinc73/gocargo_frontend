@@ -13,6 +13,10 @@ page{
   padding: 200rpx 30px;
   box-sizing: border-box;
 } 
+
+.w-100{
+  width: 100%;
+}
 /* text styles */
 
 .h1, .h2, .h3, .p{
@@ -20,7 +24,7 @@ page{
 }
 
 .h1{
-  font-weight: 600;
+  font-weight: 700;
   line-height: 3.5rem;
   font-size: 2.5rem;
 }
@@ -84,6 +88,14 @@ page{
   margin: 0 auto;
 }
 
+.btn-mini{
+  text-transform: capitalize;
+  padding: 18rpx 90rpx;
+  border-radius: 4px;
+  color: #1d1d1d;
+  text-align: center;
+}
+
 .btn-primary{
   background-color: #FFA02A;
   font-family: "poppins";
@@ -111,11 +123,21 @@ hr{
 .card-image{
   width: calc((100vw / 2) - 1.5rem);
   height: calc((100vw / 2) - 1.5rem);
-  mode: "aspectfit";
+
   border-radius: 40rpx;
 }
 
 .navigation-bar{
   display: block;
   height: 90px;
+}
+
+/* flex */
+
+.flex{
+  display: flex;
+}
+
+.justify-between{
+  justify-content: space-between;
 }

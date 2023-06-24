@@ -1,4 +1,4 @@
-<!--pages/homepage/homepage.wxml-->
+<CustomNav />
 <view class="banner">
   <view class="container">
   <text class="p text-white">GoCarGo</text>

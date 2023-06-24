@@ -8,9 +8,30 @@
     "miniprogram": {
       "list": [
         {
-          "name": "",
+          "name": "search result",
           "pathName": "pages/cars/index",
-          "query": "city=Shanghai&brand=bmw&startDate=2023-06-21&endDate=2024-06-21",
+          "query": "city=shanghai&brand=&startDate=&endDate=",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "show page",
+          "pathName": "pages/cars/show",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "confirm booking",
+          "pathName": "pages/bookings/new",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "booking",
+          "pathName": "pages/bookings/index",
+          "query": "",
           "launchMode": "default",
           "scene": null
         }

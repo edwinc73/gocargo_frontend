@@ -1,18 +1,17 @@
-// pages/cars/new.js
+// pages/bookings/index.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    renter: false,
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
   },
 
   /**
@@ -29,9 +28,22 @@ Page({
     if (typeof this.getTabBar === 'function' &&
     this.getTabBar()) {
     this.getTabBar().setData({
-      selected: 2
+      selected: 1
     })
   }
+
+  const page = this
+
+  wx.request({
+    url: 'https://gocargo-rails.osc-fr1.scalingo.io/api/v1/bookings',
+    success(res){
+      page.setData({
+        booking_owner: res.data.booking_owner,
+        booking_renter: res.data.booking_renter,
+        bookings: res.data.booking_owner
+      })
+    }
+  })
   },
 
   /**
@@ -67,5 +79,18 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  toggleRenter(){
+    if(this.data.renter){
+      this.setData({
+        renter: false,
+        bookings : this.data.booking_owner
+      })
+    } else {
+      this.setData({
+        renter: true,
+        bookings : this.data.booking_renter
+      })
+    }
   }
 })

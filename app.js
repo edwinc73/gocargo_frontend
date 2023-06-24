@@ -31,7 +31,7 @@ App({
     header: null,
     user: null,
     userInfo: null,
-    baseUrl: `http://127.0.0.1:3000/api/v1`
-    // https://gocargo-rails.osc-fr1.scalingo.io
+    baseUrl: `https://gocargo-rails.osc-fr1.scalingo.io/api/v1`,
+    tab_bar_path: ["pages/homepage/homepage", "pages/bookings/show", "pages/users/profile"]
   }
 })
