@@ -2,12 +2,25 @@ hr {
   border: none;
   border-top: 1px dashed white;
   border-width: 0.11rem;
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
 }
 
-.date-field{
+.bold{
+  font-weight: 600;
+}
+
+.date-fields{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+
+.hash{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
 .picker{
   color: white;
 }
@@ -15,8 +28,37 @@ hr {
 picker{
   width: 100px;
   height: 50px;
-  background-color: pink;
+  background-color: rgba(217,217,217,0.35);
+  padding-left: 20rpx;
+  padding-right: 20rpx;
   display: flex;
   justify-content: center;
+  align-items: center;
+  border-radius: 40rpx;
+}
+
+.btn{
+  margin-top: 280rpx;
+}
+
+.car-model{
+  display: flex;
+  flex-direction: column;
+}
+
+.car-image{
+  background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.35)), url("https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80");
+  background-position: center;
+  background-size: cover;
+  border-radius: 40px;
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.text-container{
+  align-items: center;
+}
+
+.align-center{
   align-items: center;
 }
