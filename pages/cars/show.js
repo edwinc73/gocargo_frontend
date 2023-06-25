@@ -18,7 +18,7 @@ Page({
     })
 
     wx.request({
-      url: `${app.globalData.baseUrl}/api/v1/cars/${this.data.id}`,
+      url: `${app.globalData.baseUrl}/api/v1/cars/${page.data.id}`,
       header: app.globalData.header,
       success(res){
         page.setData({
