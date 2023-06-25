@@ -1,1 +1,30 @@
 /* pages/cars/new.wxss */
+.post .p{
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.input-field{
+  background-color: rgba(217,217,217,0.35);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  align-items: center;
+  height: 24px;
+}
+
+.input-field .h2{
+  margin-right: 20px;
+}
+
+.btn{
+  margin-top: 120px;
+}
+
+.upload{
+  font-size: 48px;
+  font-weight: 300;
+  color: #cacaca;
+  background-color: rgba(217,217,217,0.35);
+  border-radius: 10px;
+}

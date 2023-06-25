@@ -18,7 +18,7 @@
       </view>
       <view class="rating">
         <text class="text-rating">4.9</text>
-        <view class="stars" wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="{{index}}">
+        <view class="stars" wx:for="{{[1, 2, 3, 4, 5]}}" wx:for-item="index">
           <view class="stars" wx:if="{{4.9 >= index + 0.5}}">
             <image class="star-full" src="/images/icons/star/star.png"></image>
           </view>
