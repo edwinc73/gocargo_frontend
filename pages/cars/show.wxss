@@ -22,6 +22,10 @@ swiper{
   justify-content: unset;
 }
 
+.container view{
+  margin-bottom: 20rpx;
+}
+
 .show-owner image{
   width: 64px;
   height: 64px;
@@ -29,7 +33,7 @@ swiper{
 }
 
 .show-owner{
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   margin-top: 20px;
 }
 
@@ -37,4 +41,42 @@ swiper{
   margin-left: 15px;
   flex-direction: column;
   justify-content: center;
+}
+
+.favourite{
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 20rpx;
+}
+
+.container .p{
+  align-self: start;
+  margin-bottom: 10rpx;
+}
+
+.container .rating{
+  align-self: start;
+}
+
+.rating{
+ display: flex;
+}
+
+.text-rating{
+  margin-right: 30rpx;
+}
+
+.star-full{
+  margin-top: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.show-owner .star-full{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.show-cta {
+  align-items: center;
 }

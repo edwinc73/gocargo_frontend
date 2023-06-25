@@ -90,11 +90,12 @@ Page({
 
   },
   formSubmit(e){
-    const app =getApp()
+    const app = getApp()
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
     wx.request({
-      url: `https://gocargo-rails.osc-fr1.scalingo.io/api/v1/cars`,
+      url: `${app.globalData.baseUrl}/api/v1/cars`,
+      header: app.globalData.header,
       success(res){
         wx.removeStorage({ key: 'cars' })
         wx.setStorage({
