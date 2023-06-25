@@ -11,8 +11,8 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-        url:  `${app.globalData.baseUrl}/login`,
-          method: 'post',
+          url:  `${app.globalData.baseUrl}/api/v1/login`,
+          method: 'POST',
           data: { code: res.code }, 
           success(loginRes) {
             app.globalData.user = loginRes.data.user 
