@@ -10,7 +10,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        wx.request(
+        wx.request({
           url:  `${app.globalData.baseUrl}/api/v1/login`,
           method: 'POST',
           data: { code: res.code }, 
