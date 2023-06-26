@@ -8,7 +8,20 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    const page = this
 
+    wx.request({
+      url: `http://127.0.0.1:3000/api/v1/bookings/10`,
+      success(res){
+        page.setData({
+          car: res.data.car,
+          image: res.data.car.car_image,
+          booking: res.data.booking,
+          renter: res.data.renter,
+          owner: res.data.owner
+        })
+      }
+    })
   },
 
   /**

@@ -17,13 +17,21 @@ Page({
       id: options.id
     })
 
+    
     wx.request({
-      url: `${app.globalData.baseUrl}/api/v1/cars/${this.data.id}`,
+      url: `${app.globalData.baseUrl}/api/v1/cars/${page.data.id}`,
       header: app.globalData.header,
       success(res){
         page.setData({
           car: res.data.car,
           owner: res.data.owner
+        })
+        const ownerRating = res.data.owner.rating
+        const carRating = res.data.car.rating
+    
+        page.setData({
+          ownerRating: ownerRating % 1 !== 0 ? ownerRating : ownerRating + ".0",
+          carRating: carRating % 1 !== 0 ? carRating : carRating + ".0"
         })
       }
     })
@@ -81,7 +89,5 @@ Page({
     wx.navigateTo({
       url: `/pages/bookings/new?id=${id}`
     })
-  },
-
-
+  }
 })

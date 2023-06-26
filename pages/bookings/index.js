@@ -5,7 +5,7 @@ Page({
    * Page initial data
    */
   data: {
-    renter: false
+    renter: true
   },
 
   /**
@@ -43,7 +43,7 @@ Page({
       page.setData({
         booking_owner: res.data.booking_owner,
         booking_renter: res.data.booking_renter,
-        bookings: res.data.booking_owner
+        bookings: res.data.booking_renter
       })
       console.log(page.data.bookings)
     }

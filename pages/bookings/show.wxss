@@ -1,1 +1,29 @@
 /* pages/bookings/show.wxss */
+.center {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+  justify-content: flex-end;
+}
+
+.hash{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-cancel{
+  background-color: #f8e5cd;
+  font-family: "poppins";
+  font-weight: 600;
+  line-height: 64rpx;
+  font-size: 1.2rem;
+  margin: auto;
+}
+
+.justify-center{
+  display: flex;
+  justify-content: center;
+}
