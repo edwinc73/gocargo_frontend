@@ -27,11 +27,3 @@
   margin: auto;
   width: 200rpx;
 }
-
-.border{
-  border-top: 1px dashed white;
-  border-bottom: 1px dashed white;
-  border-width: 0.11rem;
-  margin-top: 50rpx;
-  padding-top: 50rpx;
-}
