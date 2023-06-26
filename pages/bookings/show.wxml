@@ -6,7 +6,7 @@
         <text class="h2">{{car.car_model}}</text>
       </view>
       <view class="center">
-        <image src=`{{car.car_image}}` mode="aspectFill" />
+        <image src="{{car.car_image}}" mode="aspectFill" />
       </view>
     </view>
     <hr/>
