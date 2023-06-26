@@ -17,11 +17,14 @@
         <image class="favourite" src="/images/icons/fav/fav.png"></image>
       </view>
       <view class="rating">
-        <text class="text-rating">4.9</text>
-        <view class="stars" wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="{{index}}">
-          <view class="stars" wx:if="{{4.9 >= index + 0.5}}">
-            <image class="star-full" src="/images/icons/star/star.png"></image>
-          </view>
+        <text class="text-rating">{{carRating}}</text>
+        <view class="stars-container">
+          <image class="star-full" src="/images/icons/star/star.png"></image>
+          <image class="star-full" src="/images/icons/star/star.png"></image>
+          <image class="star-full" src="/images/icons/star/star.png"></image>
+          <image class="star-full" src="/images/icons/star/star.png"></image>
+          <image class="star-full" src="/images/icons/star/star.png"></image>
+          <view class="cover-bar" style="width:{{(100 - car.rating * 20)}}%"></view>
         </view>
       </view>
 
@@ -33,12 +36,15 @@
           <view class="show-owner-detail flex">
             <view class="p">{{owner.username}}</view>
             <view class="rating">
-              <text class="text-rating">3.8</text>
-              <view class="stars" wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="{{index}}">
-                <view class="stars" wx:if="{{4.9 >= index + 0.5}}">
+              <text class="text-rating">{{ownerRating}}</text>
+                <view class="stars-container">
                   <image class="star-full" src="/images/icons/star/star.png"></image>
+                  <image class="star-full" src="/images/icons/star/star.png"></image>
+                  <image class="star-full" src="/images/icons/star/star.png"></image>
+                  <image class="star-full" src="/images/icons/star/star.png"></image>
+                  <image class="star-full" src="/images/icons/star/star.png"></image>
+                  <view class="cover-bar" style="width:{{(100 - owner.rating * 20)}}%"></view>
                 </view>
-              </view>
             </view>
           </view>
         </view>

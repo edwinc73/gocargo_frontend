@@ -8,6 +8,7 @@
     "pages/cars/new",
     "pages/bookings/show",
     "custom-tab-bar/index",
+    "pages/eventsIndex/eventsIndex",
     "pages/bookings/new",
     "pages/bookings/index"
   ],

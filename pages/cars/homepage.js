@@ -47,6 +47,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    console.log('hoempage onshow')
     if (typeof this.getTabBar === 'function' &&
     this.getTabBar()) {
       this.getTabBar().setData({
@@ -90,13 +91,16 @@ Page({
 
   },
   formSubmit(e){
-    const app =getApp()
+    console.log('form submit')
+    const app = getApp()
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
     wx.request({
-      url: `https://gocargo-rails.osc-fr1.scalingo.io/api/v1/cars`,
+      url: `${app.globalData.baseUrl}/api/v1/cars`,
+      header: app.globalData.header,
       success(res){
         wx.removeStorage({ key: 'cars' })
+        console.log(11111, res)
         wx.setStorage({
           key: "cars",
           data: res.data
