@@ -10,12 +10,22 @@
     <view class="booking-card">
       <view class="flex w-100 justify-between">
         <text class="h2">{{booking.car.car_model}}</text>
+
         <view class="status">
-          <view wx:if="{{booking.approved}}">Approved</view>
-            <block wx:elseif><text>Under Approval</text></block>
+          <view wx:if="{{booking.completed}}">Completed</view>
+            <block wx:elif="{{booking.cancelled}}"><text>Cancelled</text></block>
+            <block wx:elif="{{!booking.approved}}"><text>Under Approval</text></block>
+            <block wx:elif="{{booking.approved}}"><text>Approved</text></block>
         </view>
       </view>
-    <view class="p">{{booking.start_date}} —— {{booking.return_date}}</view>
+        <view class="p">car model</view>
+      <view class="booking-card-detail">
+        <view class="p flex date-container">
+          <text class="p">{{booking.start_date}}</text> 
+          <view class="dash"></view>
+          <text class="p">{{booking.return_date}}</text>
+        </view>
+      </view>
     </view>
   </view>
 

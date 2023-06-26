@@ -45,6 +45,7 @@ Page({
         booking_renter: res.data.booking_renter,
         bookings: res.data.booking_renter
       })
+      console.log(page.data.bookings)
     }
   })
   },
