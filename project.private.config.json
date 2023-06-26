@@ -34,6 +34,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "booking show page",
+          "pathName": "pages/bookings/show",
+          "query": "id=1",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
