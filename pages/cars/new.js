@@ -67,5 +67,30 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  submitNewCar(e){
+    const app = getApp()
+    // needs changing upon model change
+    const car = {
+      car_model: e.detail.value.car_model,
+      city: e.detail.value.city,
+      price_per_day: e.detail.value.price_per_day,
+      mileage: e.detail.value.mileage
+    }
+    console.log(car)
+    wx.request({
+      url: `${app.globalData.baseUrl}/api/v1/cars`,
+      method: 'POST',
+      header: app.globalData.header,
+      data: car,
+      success(res){
+        wx.showToast({
+          title: "Car Added",
+        })
+        wx.switchTab({
+          url: '/pages/users/profile',
+        })
+      }
+    })
   }
 })
