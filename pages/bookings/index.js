@@ -45,7 +45,6 @@ Page({
         booking_renter: res.data.booking_renter,
         bookings: res.data.booking_renter
       })
-      console.log(page.data.bookings)
     }
   })
   },
@@ -96,5 +95,11 @@ Page({
         bookings : this.data.booking_renter
       })
     }
+  },
+  goToBooking(e){
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/bookings/show?id=${id}`,
+    })
   }
 })

@@ -6,13 +6,13 @@
         <block wx:else>Owner</block>
     </view>
   </view>
-  <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="key" class="w-100">
+  <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="key" class="w-100" bindtap="goToBooking" data-id="{{booking.id}}">
     <view class="booking-card">
       <view class="flex w-100 justify-between">
         <text class="h2">{{booking.car.car_model}}</text>
         <view class="status">
           <view wx:if="{{booking.approved}}">Approved</view>
-            <block wx:else><text>Under Approval</text></block>
+            <block wx:elseif><text>Under Approval</text></block>
         </view>
       </view>
     <view class="p">{{booking.start_date}} —— {{booking.return_date}}</view>

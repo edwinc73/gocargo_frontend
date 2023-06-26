@@ -105,11 +105,17 @@ page{
 }
 
 /* spacer styling */
-hr{
+
+
+hr {
   width: 100%;
   height: 1px;
   display: block;
-  margin: 10px 0;
+  border: none;
+  border-top: 1px dashed white;
+  border-width: 1px;
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
 }
 
 /* card styling*/
