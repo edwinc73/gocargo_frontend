@@ -17,7 +17,7 @@
         <image class="favourite" src="/images/icons/fav/fav.png"></image>
       </view>
       <view class="rating">
-        <text class="text-rating">{{car.rating}}</text>
+        <text class="text-rating">{{carRating}}</text>
         <view class="stars-container">
           <image class="star-full" src="/images/icons/star/star.png"></image>
           <image class="star-full" src="/images/icons/star/star.png"></image>
@@ -36,7 +36,7 @@
           <view class="show-owner-detail flex">
             <view class="p">{{owner.username}}</view>
             <view class="rating">
-              <text class="text-rating">{{owner.rating}}</text>
+              <text class="text-rating">{{ownerRating}}</text>
                 <view class="stars-container">
                   <image class="star-full" src="/images/icons/star/star.png"></image>
                   <image class="star-full" src="/images/icons/star/star.png"></image>
