@@ -10,7 +10,7 @@
       </view>
     </view>
     <hr/>
-    <view class="form-container w-100">
+    <view class="form-container w-100 border">
       <view class="align-center flex justify-between">
         <text class="p bold">Booking dates</text>
         <view class="date-fields">
