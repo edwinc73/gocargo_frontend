@@ -6,7 +6,7 @@
         <text class="h2">{{car.car_model}}</text>
       </view>
       <view class="center">
-        <image src="https://cdn.imagin.studio/getimage?customer=img&make=BMW&modelFamily=328i&angle=1&paintId=2t" mode="aspectFill" />
+        <image src="{{car.car_image}}" mode="aspectFill" />
       </view>
     </view>
     <hr/>
@@ -26,10 +26,12 @@
       </view>
       <hr/>
     </view>
-    <view class="container align-center flex justify-between">
-      <view class="justify-center">
-        <button class="btn btn-primary" formType="apprvoed">Approve</button>
-        <button class="btn btn-cancel" formType="cancelled">Cancel</button>
+    <view class="container">
+      <view wx:if="{{booking.cancelled}}">The booking has been cancelled</view>
+      <view wx:elif="{{booking.approved}}">The car owner has approved your application</view>
+      <view wx:else class="btn-container">
+        <button class="btn-primary" bindtap="tapApprove">Approve</button>
+        <button class="btn-cancel" bindtap="tapCancel">Cancel</button>
       </view>
     </view>
   </view> 
