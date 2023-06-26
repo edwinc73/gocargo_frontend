@@ -66,10 +66,29 @@ swiper{
   margin-right: 30rpx;
 }
 
+.stars-container{
+  position: relative;
+  height: fit-content;
+}
+
 .star-full{
   margin-top: 10rpx;
   width: 36rpx;
   height: 36rpx;
+}
+
+.cover-bar{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 30px;
+  width: 100%;
+  background-color: #1D1D1D;
+  display: block;
+  z-index: 10;
+  padding: 0;
+  margin: 5px 0;
 }
 
 .show-owner .star-full{
@@ -80,3 +99,4 @@ swiper{
 .show-cta {
   align-items: center;
 }
+
