@@ -11,8 +11,7 @@ Page({
     const page = this;
     wx.request({
       url: `http://127.0.0.1:3000/api/v1/bookings/30`,
-      /* use app.globalData.baseUrl & options.id after index page completed
-      */
+  //use app.globalData.baseUrl & options.id after index page completed
       success(res){
         page.setData({
           car: res.data.car,
@@ -72,37 +71,60 @@ Page({
 
   },
 
-  tapApprove(){
+  tapApprove() {
     let id = this.data.booking.id;
-    let booking = {
-      approved: true
-    };
-    wx.request({
-      url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
-      method: 'PUT',
-      data: booking,
-      success() {
-        wx.redirectTo({
-          url: `show`
-        });
-      }
+    wx.showModal({
+      title: 'Warning',
+      content: 'You will not be able to cancel after approve',
+      showCancel: true,
+      cancelText: "cancel",
+      confirmText: "approve",
+      success: (res) => {
+        if (res.confirm) {
+          let booking = {
+            approved: true
+          };
+          wx.request({
+            url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
+            method: 'PUT',
+            data: booking,
+            success() {
+              wx.redirectTo({
+                url: `show`
+              });
+            }
+          });
+        }
+      },
     });
   },
 
   tapCancel(){
     let id = this.data.booking.id;
-    let booking = {
-      cancelled: true
-    };
-    wx.request({
-      url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
-      method: 'PUT',
-      data: booking,
-      success() {
-        wx.redirectTo({
-          url: `index`
-        });
-      }
+    wx.showModal({
+      title: 'Warning',
+      content: 'Are you sure to cancel the order?',
+      showCancel: true,
+      cancelText: "cancel",
+      confirmText: "confrim",
+      success: (res) => {
+        if (res.confirm) {
+          let booking = {
+            cancelled: true
+          };
+          wx.request({
+            url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
+            method: 'PUT',
+            data: booking,
+            success() {
+              wx.redirectTo({
+                url: `index`
+              });
+            }
+          });
+        }
+      },
     });
   }
+
 })
