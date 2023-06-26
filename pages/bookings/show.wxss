@@ -13,6 +13,10 @@
   display: flex;
   justify-content: center;
 }
+.btn-container{
+   display: flex;
+  justify-content: space-between;
+}
 
 .btn-cancel{
   background-color: #f8e5cd;
@@ -21,9 +25,5 @@
   line-height: 64rpx;
   font-size: 1.2rem;
   margin: auto;
-}
-
-.justify-center{
-  display: flex;
-  justify-content: center;
+  width: 200rpx;
 }

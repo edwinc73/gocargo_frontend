@@ -7,15 +7,15 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad(options) {
-    const page = this
-
+  onLoad() {
+    const page = this;
     wx.request({
-      url: `http://127.0.0.1:3000/api/v1/bookings/10`,
+      url: `http://127.0.0.1:3000/api/v1/bookings/30`,
+      /* use app.globalData.baseUrl & options.id after index page completed
+      */
       success(res){
         page.setData({
           car: res.data.car,
-          image: res.data.car.car_image,
           booking: res.data.booking,
           renter: res.data.renter,
           owner: res.data.owner
@@ -70,5 +70,39 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  tapApprove(){
+    let id = this.data.booking.id;
+    let booking = {
+      approved: true
+    };
+    wx.request({
+      url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
+      method: 'PUT',
+      data: booking,
+      success() {
+        wx.redirectTo({
+          url: `show`
+        });
+      }
+    });
+  },
+
+  tapCancel(){
+    let id = this.data.booking.id;
+    let booking = {
+      cancelled: true
+    };
+    wx.request({
+      url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
+      method: 'PUT',
+      data: booking,
+      success() {
+        wx.redirectTo({
+          url: `index`
+        });
+      }
+    });
   }
 })
