@@ -7,11 +7,13 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad() {
+  onLoad(options) {
     const page = this;
+    const app = getApp()
+    const id = options.id
     wx.request({
-      url: `http://127.0.0.1:3000/api/v1/bookings/30`,
-  //use app.globalData.baseUrl & options.id after index page completed
+      url: `${app.globalData.baseUrl}/api/v1/bookings/${id}`,
+      header: app.globalData.header,
       success(res){
         page.setData({
           car: res.data.car,
@@ -73,25 +75,28 @@ Page({
 
   tapApprove() {
     let id = this.data.booking.id;
+    const app = getApp()
     wx.showModal({
-      title: 'Warning',
-      content: 'You will not be able to cancel after approve',
+      title: 'Approve',
+      content: 'Are you sure?',
       showCancel: true,
       cancelText: "cancel",
       confirmText: "approve",
       success: (res) => {
         if (res.confirm) {
-          let booking = {
-            approved: true
-          };
           wx.request({
-            url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
+      header: app.globalData.header,
+            url: `${app.globalData.baseUrl}/api/v1/bookings/${id}`,
+            header: app.globalData.header,
             method: 'PUT',
-            data: booking,
+            data: {approved: true},
             success() {
+              wx.showToast({
+                title: 'Approved',
+              })
               wx.redirectTo({
-                url: `show`
-              });
+                url: `/pages/bookings/show?id=${id}`,
+              })
             }
           });
         }
@@ -100,25 +105,27 @@ Page({
   },
 
   tapCancel(){
+    const app = getApp()
     let id = this.data.booking.id;
     wx.showModal({
-      title: 'Warning',
-      content: 'Are you sure to cancel the order?',
+      title: 'Cancel',
+      content: 'Are you sure?',
       showCancel: true,
       cancelText: "cancel",
-      confirmText: "confrim",
+      confirmText: "confirm",
       success: (res) => {
         if (res.confirm) {
           let booking = {
             cancelled: true
           };
           wx.request({
-            url: `http://127.0.0.1:3000/api/v1/bookings/${id}`,
+            url: `${app.globalData.baseUrl}/api/v1/bookings/${id}`,
             method: 'PUT',
+            header: app.globalData.header,
             data: booking,
             success() {
-              wx.redirectTo({
-                url: `index`
+              wx.switchTab({
+                url: `/pages/bookings/index`
               });
             }
           });

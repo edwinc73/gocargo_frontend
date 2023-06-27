@@ -1,27 +1,26 @@
 <!--pages/bookings/show.wxml-->
 <view>
   <view class="container w-100">
-    <view class="text-container flex w-100 justify-between">
+    <view class="align-center flex w-100 justify-between">
       <view class="car-model">
         <text class="h2">{{car.car_model}}</text>
+        <text class="p" style="display:block">car model</text>
       </view>
-      <view class="center">
-        <image src="{{car.car_image}}" mode="aspectFill" />
-      </view>
+        <image src="{{car.car_image}}" class="car-image" mode="aspectFill" />
     </view>
     <hr/>
     <view class="form-container w-100">
       <view class="align-center flex justify-between">
-        <text class="p bold">Booking dates</text>
+        <text class="h4">Selected dates</text>
         <view class="date-fields">
-          <view class="p picker startDate">START: {{booking.startdate}}</view>
-          <view class="hash">|</view>
-          <view class="p picker endDate">RETRUN: {{booking.returndate}}</view>
+          <view class="p picker startDate">{{booking.start_date}}</view>
+          <view class="divider"></view>
+          <view class="p picker endDate">{{booking.return_date}}</view>
         </view>
       </view>
-      <hr/>
+      <hr />
       <view class="align-center flex justify-between">
-        <text class="p bold">Total Price</text> 
+        <text class="h4">Total Price</text> 
         <text class="h2">¥{{booking.total_price}}.00</text>
       </view>
       <hr/>

@@ -28,9 +28,9 @@
 
 .booking-card{
   margin: 40rpx auto;
-  border-radius: 30px;
+  border-radius: 35px;
   background-color: rgba(217,217,217,0.35);
-  padding: 20rpx 40rpx;
+  padding: 15px 20px;
 }
 
 .booking-card .flex{
@@ -39,4 +39,25 @@
 
 .completed{
   text-align: left;
+}
+
+.dash{
+  height: 1px;
+  width: 20px;
+  display: block;
+  background-color: #CACACA;
+}
+
+.date-container{
+  width: 70%;
+  justify-content: left;
+  gap: 10px;
+}
+
+.booking-card{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 0;
+  padding: ;
 }

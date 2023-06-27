@@ -1,21 +1,35 @@
 /* pages/bookings/show.wxss */
-.center {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width:100%;
-  justify-content: flex-end;
+
+.align-center{
+  align-items: center;
+  flex-direction: row;
 }
 
-.hash{
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-  display: flex;
-  justify-content: center;
+.car-image{
+  width: 180px;
+  height: 180px;
+  background-color: #2d2d2d;
+  border-radius: 20px;
 }
+
+.divider{
+  width: 1px;
+  height: 20px;
+  display: block;
+  background-color: white;
+}
+
 .btn-container{
    display: flex;
   justify-content: space-between;
+}
+
+.date-fields{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .btn-cancel{

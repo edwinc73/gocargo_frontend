@@ -96,5 +96,11 @@ Page({
         bookings : this.data.booking_renter
       })
     }
+  },
+  goToBooking(e){
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/bookings/show?id=${id}`,
+    })
   }
 })
