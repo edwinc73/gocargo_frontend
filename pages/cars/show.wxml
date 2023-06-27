@@ -1,19 +1,22 @@
 <view>
   <swiper indicator-dots="true">
     <swiper-item>
-      <image src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" mode="aspectFill"/>
+      <image src="{{car.car_image}}" mode="aspectFill"/>
     </swiper-item>
     <swiper-item>
-      <image src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" mode="aspectFill"/>
+      <image src="{{car.car_image}}" mode="aspectFill"/>
     </swiper-item>
     <swiper-item>
-      <image src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" mode="aspectFill"/>
+      <image src="{{car.car_image}}" mode="aspectFill"/>
     </swiper-item>
   </swiper>
   <view class="car-info">
     <view class="container">
       <view class=" flex w-100 justify-between">
-        <text class="h2">{{car.car_model}}</text>
+      <view class="title flex">
+        <text class="h2">{{car.car_brand}}</text>
+        <text class="p">{{car.car_model}}</text>
+      </view>
         <image class="favourite" src="/images/icons/fav/fav.png"></image>
       </view>
       <view class="rating">
@@ -27,12 +30,14 @@
           <view class="cover-bar" style="width:{{(100 - car.rating * 20)}}%"></view>
         </view>
       </view>
-
-      <text class="p">Mileage: {{car.mileage}} km</text>
+      <view class="cars-show-text">
+        <text class="p">Mileage: {{car.mileage}} km</text>
+        <text class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero rerum esse...</text>
+      </view>
       <view class="show-owner w-100">
         <text class="h3">Owner</text>
         <view class="flex w-100" style="margin-top:10px">
-          <image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" mode="aspectFill"/>
+          <image src="{{owner.avatar_image}}" mode="aspectFill"/>
           <view class="show-owner-detail flex">
             <view class="p">{{owner.username}}</view>
             <view class="rating">
