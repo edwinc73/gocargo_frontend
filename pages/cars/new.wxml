@@ -1,29 +1,28 @@
 <!--pages/cars/new.wxml-->
 <view class="container w-100">
-  <form class="post w-100" bindsubmit="">
-    <view class="p text-left">Car Brand</view>
+  <form class="post w-100" bindsubmit="submitNewCar">
+    <view class="p text-left">Car Brand *</view>
     <view class="input-field">
-      <input type="text" name="car brand" placeholder="e.g. Porsche" placeholder-style="color:#cacaca" class="input" />
+      <input type="text" name="car_brand" placeholder="e.g. Porsche" placeholder-style="color:#cacaca" class="input" required />
     </view>
-    <view class="p text-left">Car Model</view>
+    <view class="p text-left">Car Model *</view>
     <view class="input-field">
-      <input type="text" name="car model" placeholder="e.g. 718 Cayman" placeholder-style="color:#cacaca" class="input" />
+      <input type="text" name="car_model" placeholder="e.g. 718 Cayman" placeholder-style="color:#cacaca" class="input" required/>
     </view>
-    <view class="p text-left">City</view>
+    <view class="p text-left">City *</view>
     <view class="input-field">
       <input type="text" name="city" placeholder="e.g. Shanghai" placeholder-style="color:#cacaca" class="input" />
     </view>
-    <view class="p text-left">Price / Day</view>
+    <view class="p text-left">Price / Day (¥) *</view>
     <view class="input-field flex">
-      <view class="h2">¥</view>
-      <input type="text" name="price per day" placeholder="e.g. 300.00" placeholder-style="color:#cacaca" class="input" />
+      <input type="text" name="price_per_day" placeholder="e.g. 300.00" placeholder-style="color:#cacaca" class="input" />
     </view>
-    <view class="p text-left">Mileage</view>
+    <view class="p text-left">Mileage *</view>
     <view class="input-field flex justify-between">
       <input type="text" name="mileage" placeholder="e.g. 100" placeholder-style="color:#cacaca" class="input" />
       <view class="h2">KM</view>
     </view>
-    <view class="p text-left">Images</view>
+    <view class="p text-left">Images *</view>
     <button class="upload">+</button>
     <button class="btn btn-primary form-submit" form-type="submit">Add A New Car</button>
   </form>
