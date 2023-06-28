@@ -100,11 +100,43 @@ Page({
       header: app.globalData.header,
       success(res){
         wx.removeStorage({ key: 'cars' })
-        console.log(11111, res)
+        console.log(res)
         wx.setStorage({
           key: "cars",
           data: res.data
         })
+
+        const cars = res.data.cars;
+        const validCity = cars.some(car => car.city.toLowerCase() === city.toLowerCase());
+        const validBrand = cars.some(car => car.car_model.toLowerCase() === brand.toLowerCase());
+
+        if (!validCity && !validBrand) {
+          wx.showToast({
+            title: 'The entered city and car brand are unavailable',
+            icon: 'none',
+            duration: 3000
+          });
+          return;
+        }
+  
+        if (!validCity) {
+          wx.showToast({
+            title: 'The entered city is unavailable',
+            icon: 'none',
+            duration: 3000
+          });
+          return;
+        }
+
+        if (!validBrand) {
+          wx.showToast({
+            title: 'The entered car brand is unavailable',
+            icon: 'none',
+            duration: 3000
+          });
+          return;
+        }
+  
         app.globalData.dates = [startDate, endDate] 
         wx.navigateTo({
           url: `/pages/cars/index?city=${city}&brand=${brand}&startDate=${startDate}&endDate=${endDate}`
