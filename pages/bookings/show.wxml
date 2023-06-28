@@ -26,8 +26,8 @@
       <hr/>
     </view>
     <view class="container">
-      <view wx:if="{{booking.cancelled}}">The booking has been cancelled</view>
-      <view wx:elif="{{booking.approved}}">The car owner has approved your application</view>
+      <view wx:if="{{booking.cancelled}}">The booking has been cancelled.</view>
+      <view wx:elif="{{booking.completed}}">This booking has been completed.</view>
       <view wx:else class="btn-container">
           <button wx:if="{{showApprove}}"class="btn-primary" bindtap="tapApprove">Approve</button>
           <button wx:elif="{{!showApprove}}"class="btn-primary" bindtap="tapedit">Edit</button>
