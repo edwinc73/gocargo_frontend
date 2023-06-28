@@ -19,7 +19,6 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady() {
-
   },
 
   /**
@@ -53,15 +52,19 @@ Page({
       }
       
       res.data.booking_owner.forEach(booking => {
-        if(booking.cancelled || booking.completed || new Date(booking.return_date) < today){
+        if(booking.cancelled || booking.completed || Date.parse(booking.return_date) < Date.now()){
           booking_owner.previous.push(booking)
         } else {
           booking_owner.upcoming.push(booking)
         }
       });
 
+      page.setData({
+        booking_renter: booking_renter
+      })
+
       res.data.booking_renter.forEach(booking => {
-        if(booking.cancelled || booking.completed || new Date(booking.return_date) < today){
+        if(booking.cancelled || booking.completed || Date.parse(booking.return_date) < Date.now()){
           booking_renter.previous.push(booking)
         } else {
           booking_renter.upcoming.push(booking)
@@ -69,11 +72,12 @@ Page({
       });
 
       page.setData({
-        booking_owner: res.data.booking_owner,
-        booking_renter: booking_renter,
-        bookings: booking_renter
+        booking_owner: booking_owner
       })
-      console.log(page.data.bookings)
+
+      page.setData({
+        bookings: page.data.renter ? booking_renter : booking_owner
+      })
     }
   })
   },

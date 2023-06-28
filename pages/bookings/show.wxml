@@ -3,8 +3,8 @@
   <view class="container w-100">
     <view class="align-center flex w-100 justify-between">
       <view class="car-model">
-        <text class="h2">{{car.car_model}}</text>
-        <text class="p" style="display:block">car model</text>
+        <text class="h2">{{car.car_brand}}</text>
+        <text class="p" style="display:block">{{car.car_model}}</text>
       </view>
         <image src="{{car.car_image}}" class="car-image" mode="aspectFill" />
     </view>
@@ -29,7 +29,8 @@
       <view wx:if="{{booking.cancelled}}">The booking has been cancelled</view>
       <view wx:elif="{{booking.approved}}">The car owner has approved your application</view>
       <view wx:else class="btn-container">
-        <button class="btn-primary" bindtap="tapApprove">Approve</button>
+          <button wx:if="{{showApprove}}"class="btn-primary" bindtap="tapApprove">Approve</button>
+          <button wx:elif="{{!showApprove}}"class="btn-primary" bindtap="tapedit">Edit</button>
         <button class="btn-cancel" bindtap="tapCancel">Cancel</button>
       </view>
     </view>
