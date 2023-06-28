@@ -1,23 +1,22 @@
 <view class="container">
   <view class="title text-left w-100 flex justify-between">
-    <text class="h2">Upcoming rentings</text>
+    <text class="h2">Upcoming Bookings</text>
     <view class="toggle" bindtap="toggleRenter">
       <view wx:if="{{renter}}">Renter</view>
         <block wx:else>Owner</block>
     </view>
   </view>
   
-  <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="key" class="w-100" bindtap="goToBooking" data-id="{{booking.id}}">
+  <view wx:for="{{bookings.upcoming}}" wx:for-item="booking" wx:key="key" class="w-100" bindtap="goToBooking" data-id="{{booking.id}}">
     <view class="booking-card">
       <view class="flex w-100 justify-between">
-        <text class="h2">{{booking.car.car_model}}</text>
-
+        <text class="h2">{{booking.car.car_brand}}</text>
         <view class="status">
           <view wx:if="{{booking.approved}}">Under Approval</view>
-            <block wx:elif="{{booking.approved}}"><text>Approved</text></block>
+            <block wx:elif="{{!booking.approved}}"><text>Awaiting</text></block>
         </view>
       </view>
-        <view class="p">car model</view>
+        <view class="p" style="">{{booking.car.car_model}}</view>
       <view class="booking-card-detail">
         <view class="p flex date-container">
           <text class="p">{{booking.start_date}}</text> 
@@ -28,24 +27,26 @@
     </view>
   </view>
 
-  <view class="title text-left w-100 flex justify-between">
-    <view class="h2">Previous trips</view>
-    <view wx:for="{{bookings}}" wx:for-item="booking" wx:key="key" class="w-100" bindtap="goToBooking" data-id="{{booking.id}}">
-      <view class="booking-card">
-        <view class="flex w-100 justify-between">
-          <text class="h2">{{booking.car.car_model}}</text>
+  <view class="title w-100">
+    <view class="h2">Previous Booking</view>
+    <view>
+      <view wx:for="{{bookings.previous}}" wx:for-item="booking" wx:key="key" class="w-100" bindtap="goToBooking" data-id="{{booking.id}}">
+        <view class="booking-card">
+          <view class="flex w-100 justify-between">
+            <text class="h2">{{booking.car.car_brand}}</text>
 
-          <view class="status">
-            <view wx:if="{{booking.completed}}">Completed</view>
-              <block wx:elif="{{booking.cancelled}}"><text>Cancelled</text></block>
+            <view class="status">
+              <view wx:if="{{booking.completed}}">Completed</view>
+                <block wx:elif="{{booking.cancelled}}"><text>Cancelled</text></block>
+            </view>
           </view>
-        </view>
-          <view class="p">car model</view>
-        <view class="booking-card-detail">
-          <view class="p flex date-container">
-            <text class="p">{{booking.start_date}}</text> 
-            <view class="dash"></view>
-            <text class="p">{{booking.return_date}}</text>
+            <view class="p">{{booking.car.car_model}}</view>
+          <view class="booking-card-detail">
+            <view class="p flex date-container">
+              <text class="p">{{booking.start_date}}</text> 
+              <view class="dash"></view>
+              <text class="p">{{booking.return_date}}</text>
+            </view>
           </view>
         </view>
       </view>
