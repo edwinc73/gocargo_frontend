@@ -72,6 +72,7 @@ Page({
     const app = getApp()
     // needs changing upon model change
     const car = {
+      car_brand:e.detail.value.car_brand,
       car_model: e.detail.value.car_model,
       city: e.detail.value.city,
       price_per_day: e.detail.value.price_per_day,
