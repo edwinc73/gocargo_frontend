@@ -53,7 +53,7 @@ Page({
       }
       
       res.data.booking_owner.forEach(booking => {
-        if(booking.cancelled || booking.completed || new Date(booking.start_date) < today){
+        if(booking.cancelled || booking.completed || new Date(booking.return_date) < today){
           booking_owner.previous.push(booking)
         } else {
           booking_owner.upcoming.push(booking)
@@ -61,7 +61,7 @@ Page({
       });
 
       res.data.booking_renter.forEach(booking => {
-        if(booking.cancelled || booking.completed || new Date(booking.start_date) < today){
+        if(booking.cancelled || booking.completed || new Date(booking.return_date) < today){
           booking_renter.previous.push(booking)
         } else {
           booking_renter.upcoming.push(booking)
