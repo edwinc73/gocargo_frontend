@@ -28,16 +28,17 @@ Page({
       header: app.globalData.header,
       success(res){
         const car = res.data.car
-        const owner = res.data.car
+        const owner = res.data.owner
         const renter = res.data.renter
         const current_user = app.globalData.user
-        console.log(res)
         page.setData({
           car: res.data.car,
           booking: res.data.booking,
           renter: res.data.renter,
           owner: res.data.owner,
-          showApprove: current_user == owner
+          showApprove: current_user.id == owner.id,
+          cancelled: res.data.booking.cancelled,
+          completed: res.data.booking.completed
         })
       }
     })
