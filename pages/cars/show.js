@@ -23,18 +23,11 @@ Page({
       header: app.globalData.header,
       
       success(res){
-        console.log(res)
-        const photos = []
-        res.data.photos.forEach( photo =>{
-          photos.push(`https://res.cloudinary.com/dj2vij3ty/image/upload/${photo.key}`)
-
-        "  https://res.cloudinary.com/<cloud_name>/<asset_type>/<delivery_type>/<transformations>/<version>/<public_id>.<extension>"
-        })
-        console.log(res.data)
         page.setData({
           car: res.data.car,
           owner: res.data.owner,
-          photos: photos
+          photos: res.data.photos,
+          noPhotos : res.data.photos.length == 0
         })
         const ownerRating = res.data.owner.rating
         const carRating = res.data.car.rating

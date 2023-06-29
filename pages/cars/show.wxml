@@ -1,15 +1,16 @@
 <view>
   <swiper indicator-dots="true">
-    <swiper-item wx:for="{{photos}}" wx:for-item="{{photo}}">
-    <text class="p">{{photo}}</text>
-      <image src="{{photo}}" mode="aspectFill"/>
+    <swiper-item wx:for="{{photos}}">
+      <image src="{{item}}" mode="aspectFill"/>
     </swiper-item>
-    <swiper-item>
-      <image src="{{car.car_image}}" mode="aspectFill"/>
-    </swiper-item>
-    <swiper-item>
-      <image src="{{car.car_image}}" mode="aspectFill"/>
-    </swiper-item>
+    <block wx:if="{{noPhotos}}">
+      <swiper-item>
+        <image src="{{car.car_image}}" mode="aspectFill"/>
+      </swiper-item>
+      <swiper-item>
+        <image src="{{car.car_image}}" mode="aspectFill"/>
+      </swiper-item>
+    </block>
   </swiper>
   <view class="car-info">
     <view class="container">
