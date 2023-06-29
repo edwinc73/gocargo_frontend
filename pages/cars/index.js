@@ -40,7 +40,7 @@ Page({
             cars: cityFiltered
           })
         }
-      })
+      }) 
   },
 
   /**

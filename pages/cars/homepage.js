@@ -117,7 +117,7 @@ Page({
 
         const cars = res.data.cars;
         const validCity = city === '' || cars.some(car => car.city.toLowerCase() === city.toLowerCase());
-        const validBrand = brand === '' || cars.some(car => car.car_model.toLowerCase() === brand.toLowerCase());
+        const validBrand = brand === '' || cars.some(car => car.car_brand.toLowerCase() === brand.toLowerCase());
         
         if (city === '' && brand === '') {
           wx.navigateTo({
