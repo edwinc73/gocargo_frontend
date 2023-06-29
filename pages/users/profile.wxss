@@ -1,6 +1,13 @@
 .avatar{
   width: 150px;
   height: 150px;
+  border-radius: 50%;
+}
+
+.user-info{
+  align-items: center;
+  width: 92%;
+  align-self: start;
 }
 
 .container .rating{
