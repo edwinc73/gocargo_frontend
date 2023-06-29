@@ -1,28 +1,12 @@
 // pages/bookings/show.js
 Page({
   data: {
-
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    const page = this;
-    const app = getApp()
-    const id = options.id
-    wx.request({
-      url: `${app.globalData.baseUrl}/api/v1/bookings/${id}`,
-      header: app.globalData.header,
-      success(res){
-        page.setData({
-          car: res.data.car,
-          booking: res.data.booking,
-          renter: res.data.renter,
-          owner: res.data.owner
-        })
-      }
-    })
   },
 
   /**
@@ -36,6 +20,28 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const page = this;
+    const app = getApp()
+    const id = page.options.id
+    wx.request({
+      url: `${app.globalData.baseUrl}/api/v1/bookings/${id}`,
+      header: app.globalData.header,
+      success(res){
+        const car = res.data.car
+        const owner = res.data.owner
+        const renter = res.data.renter
+        const current_user = app.globalData.user
+        page.setData({
+          car: res.data.car,
+          booking: res.data.booking,
+          renter: res.data.renter,
+          owner: res.data.owner,
+          showApprove: current_user.id == owner.id,
+          cancelled: res.data.booking.cancelled,
+          completed: res.data.booking.completed
+        })
+      }
+    })
   },
 
   /**
