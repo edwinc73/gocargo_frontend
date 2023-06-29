@@ -3,13 +3,19 @@
     <image src="/images/icons/navBar/filter-light.png" mode="" class="actions filter custom-icon" />
     <image src="/images/icons/navBar/bell-light.png" mode="" class="actions bell custom-icon" />
   </view>
-  <text class="h2">Available cars in {{city}}</text>
-  <view class="card-grid">
-    <view class="card" wx:for="{{cars}}" wx:for-item="car" bindtap="goToCarsShow" wx:key="key" data-id="{{car.id}}">
-        <image src="{{car.car_image}}" class="card-image" mode="aspectFill"/>
-        <view class="car-info">
-        <text class="p">{{car.car_model}}</text>
-        <view class="p light">{{car.rating}}</view>
+  <view wx:if="{{noResult}}">
+    <text class="h2">Oops, there are no results</text>
+  </view>
+
+  <view wx:else>
+    <text class="h2">Available cars in {{city}}</text>
+    <view class="card-grid">
+      <view class="card" wx:for="{{cars}}" wx:for-item="car" bindtap="goToCarsShow" wx:key="key" data-id="{{car.id}}">
+          <image src="{{car.car_image}}" class="card-image" mode="aspectFill"/>
+          <view class="car-info">
+          <text class="p">{{car.car_brand}}</text>
+          <view class="p light">{{car.car_model}}</view>
+        </view>
       </view>
     </view>
   </view>
