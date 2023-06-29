@@ -5,7 +5,6 @@ Page({
    * Page initial data
    */
   data: {
-
   },
 
   /**
@@ -70,6 +69,7 @@ Page({
   },
   submitNewCar(e){
     const app = getApp()
+    const page = this
     // needs changing upon model change
     const car = {
       car_brand:e.detail.value.car_brand,
@@ -78,18 +78,48 @@ Page({
       price_per_day: e.detail.value.price_per_day,
       mileage: e.detail.value.mileage
     }
-    console.log(car)
     wx.request({
       url: `${app.globalData.baseUrl}/api/v1/cars`,
       method: 'POST',
       header: app.globalData.header,
       data: car,
       success(res){
-        wx.showToast({
-          title: "Car Added",
-        })
-        wx.switchTab({
-          url: '/pages/users/profile',
+        console.log(res)
+
+        const tempFiles = page.data.tempFiles
+        tempFiles.forEach(file => {
+          wx.uploadFile({
+            url: `${app.globalData.baseUrl}/api/v1/cars/${res.data.car.id}/upload_img`,
+            filePath: file.tempFilePath,
+            name: 'photos',
+            header: app.globalData.header,
+            success(res){
+              console.log(res)
+            },
+            // complete(){
+            //   wx.showToast({
+            //     title: "Car Added",
+            //   })
+            //   wx.switchTab({
+            //     url: '/pages/users/profile',
+            //   })
+            // }
+          })
+        });
+      }
+    })
+  },
+  uploadImage(){
+    const page = this
+    wx.chooseMedia({
+      count: 9,
+      mediaType: 'image',
+      sourceType: ['album', 'camera'],
+      camera: 'back',
+      success(res) {
+        console.log(res.tempFiles)
+        page.setData({
+          tempFiles: res.tempFiles
         })
       }
     })

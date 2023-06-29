@@ -23,7 +23,12 @@
       <view class="h2">KM</view>
     </view>
     <view class="p text-left">Images *</view>
-    <button class="upload">+</button>
+      <scroll-view class="image-gallery" scroll-x="true" style="width: 100%">
+          <view class="car-image-uploader car-image" bindtap="uploadImage"></view>
+        <block wx:for="{{tempFiles}}">
+          <image src="{{item.tempFilePath}}" mode="aspectFill" class="car-image" />
+        </block>
+      </scroll-view>
     <button class="btn btn-primary form-submit" form-type="submit">Add A New Car</button>
   </form>
 </view>
