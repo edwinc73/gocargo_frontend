@@ -5,7 +5,8 @@
         <text class="h2">{{car.car_brand}}</text>
         <text class="p">{{car.car_model}}</text>
       </view>
-      <image src="{{car.car_image}}" mode="aspectFill"  class="car-image"/>
+      <image wx:if="{{photos.length > 0}}" src="{{photos[0]}}" mode="aspectFill" class="car-image"/>
+      <image wx:else src="{{car.car_image}}" mode="aspectFill"  class="car-image"/>
     </view>
     <hr/>
     <view class="form-container w-100">

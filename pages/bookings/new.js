@@ -41,9 +41,11 @@ Page({
       url: `${app.globalData.baseUrl}/api/v1/cars/${page.data.id}`,
       header: app.globalData.header,
       success(res){
+        console.log(res.data)
         page.setData({
           car: res.data.car,
-          total_price:  days * res.data.car.price_per_day
+          total_price:  days * res.data.car.price_per_day,
+          photos: res.data.photos
         })
       }
     })

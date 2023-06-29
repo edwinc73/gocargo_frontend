@@ -3,9 +3,7 @@ Page({
   /**
    * Page initial data
    */
-  data: {
-    nbFrontColor: '#000000',
-    nbBackgroundColor: '#ffffff',
+  data: 
     cars: [],
     noResult: false
   },
