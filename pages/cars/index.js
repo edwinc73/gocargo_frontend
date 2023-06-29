@@ -3,15 +3,26 @@ Page({
   /**
    * Page initial data
    */
-  data: {
+  data: 
+    cars: [],
+    noResult: false
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    const page = this
-    this.setData({
+    const { city, brand, startDate, endDate, noResult } = options;
+    const page = this;
+
+
+    if (noResult) {
+      page.setData({
+        noResult: true
+      });
+    } 
+    
+    page.setData({
       city: options.city,
       brand: options.brand,
       startDate: options.startDate,
@@ -27,7 +38,7 @@ Page({
           cars: cityFiltered
         })
       }
-    })
+    }) 
   },
 
   /**
