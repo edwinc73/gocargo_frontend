@@ -3,7 +3,7 @@ Page({
   /**
    * Page initial data
    */
-  data: 
+  data: {
     cars: [],
     noResult: false
   },
