@@ -21,10 +21,37 @@
   margin-top: 30px;
 }
 
-.upload{
-  font-size: 48px;
-  font-weight: 300;
-  color: #cacaca;
-  background-color: rgba(217,217,217,0.35);
+.image-gallery{
+  display: flex;
+  white-space: nowrap;
+  height: 100px;
+}
+
+.car-image{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
   border-radius: 10px;
+  margin: 0 5px;
+}
+
+.car-image:first-child{
+  margin: 0 5px 0px 0;
+}
+
+.car-image-uploader{
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  background-color: #989797A6;
+  font-size: 30px;
+  position: relative;
+}
+
+.car-image-uploader::before{
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
