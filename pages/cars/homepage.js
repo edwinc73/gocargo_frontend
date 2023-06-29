@@ -95,6 +95,15 @@ Page({
     const app = getApp()
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
+
+    // if (!startDate || !endDate) {
+    //   wx.showToast({
+    //     title: 'Please select start date and end date',
+    //     icon: 'none'
+    //   });
+    //   return;
+    // }
+
     wx.request({
       url: `${app.globalData.baseUrl}/api/v1/cars`,
       header: app.globalData.header,
@@ -107,37 +116,24 @@ Page({
         })
 
         const cars = res.data.cars;
-        const validCity = cars.some(car => car.city.toLowerCase() === city.toLowerCase());
-        const validBrand = cars.some(car => car.car_model.toLowerCase() === brand.toLowerCase());
-
-        if (!validCity && !validBrand) {
-          wx.showToast({
-            title: 'The entered city and car brand are unavailable',
-            icon: 'none',
-            duration: 3000
+        const validCity = city === '' || cars.some(car => car.city.toLowerCase() === city.toLowerCase());
+        const validBrand = brand === '' || cars.some(car => car.car_model.toLowerCase() === brand.toLowerCase());
+        
+        if (city === '' && brand === '') {
+          wx.navigateTo({
+            url: `/pages/cars/index`
           });
           return;
         }
-  
-        if (!validCity) {
-          wx.showToast({
-            title: 'The entered city is unavailable',
-            icon: 'none',
-            duration: 3000
+        
+        if (!validCity || !validBrand) {
+          wx.navigateTo({
+            url: `/pages/cars/index?city=${city}&brand=${brand}&noResult=true`
           });
           return;
         }
 
-        if (!validBrand) {
-          wx.showToast({
-            title: 'The entered car brand is unavailable',
-            icon: 'none',
-            duration: 3000
-          });
-          return;
-        }
-  
-        app.globalData.dates = [startDate, endDate] 
+        app.globalData.dates = [startDate, endDate]
         wx.navigateTo({
           url: `/pages/cars/index?city=${city}&brand=${brand}&startDate=${startDate}&endDate=${endDate}`
         })

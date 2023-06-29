@@ -6,14 +6,25 @@ Page({
   data: {
     nbFrontColor: '#000000',
     nbBackgroundColor: '#ffffff',
+    cars: [],
+    noResult: false
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    const page = this
-    this.setData({
+    const { city, brand, startDate, endDate, noResult } = options;
+    const page = this;
+
+
+    if (noResult) {
+      page.setData({
+        noResult: true
+      });
+    } 
+    
+    page.setData({
       city: options.city,
       brand: options.brand,
       startDate: options.startDate,
@@ -21,15 +32,15 @@ Page({
     })
 
     wx.getStorage({
-      key: 'cars',
-      success (res) {
-        const cityFiltered = res.data.cars.filter( car => car.city.toLowerCase() == page.data.city.toLowerCase())
-        cityFiltered.map (car => car.id == page.options.id)
-        page.setData({
-          cars: cityFiltered
-        })
-      }
-    })
+        key: 'cars',
+        success (res) {
+          const cityFiltered = res.data.cars.filter( car => car.city.toLowerCase() == page.data.city.toLowerCase())
+          cityFiltered.map (car => car.id == page.options.id)
+          page.setData({
+            cars: cityFiltered
+          })
+        }
+      })
   },
 
   /**
