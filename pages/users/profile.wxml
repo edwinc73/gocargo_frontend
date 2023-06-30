@@ -1,11 +1,11 @@
 <view class="container">
-  <view class="user-info w-100 flex">
-    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+  <view class="user-info flex justify-between">
+    <button class="avatar-wrapper" open-type="getUserInfo" bindgetuserinfo="onChooseAvatar">
       <image class="avatar" src="{{avatarUrl}}"></image>
     </button> 
     <!-- <image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" mode="aspectFill" class="avatar"/> -->
     <view class="user-info-detail">
-      <text class="h2">Username</text>
+      <text class="h2">{{nickname}}</text>
       <view class="w-100 flex">
         <view>{{user.rating}}</view>
         <view class="stars-container">

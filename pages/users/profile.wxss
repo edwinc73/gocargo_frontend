@@ -1,6 +1,19 @@
+.avatar-wrapper{
+  width: 100px;
+  height: 180px;
+  border-radius: 50%;
+}
+
 .avatar{
-  width: 150px;
   height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.user-info{
+  align-items: center;
+  width: 100%;
+  align-self: start;
 }
 
 .container .rating{
