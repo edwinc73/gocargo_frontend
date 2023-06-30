@@ -98,8 +98,9 @@ Page({
 
     if (!startDate || !endDate) {
       wx.showToast({
-        title: 'Missing Inputs',
-        icon: "error"
+        title: 'Missing Input',
+        icon: "error",
+        duration: 1500
       });
       return;
     }

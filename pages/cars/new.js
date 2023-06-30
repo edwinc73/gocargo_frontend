@@ -5,6 +5,7 @@ Page({
    * Page initial data
    */
   data: {
+    tempFiles: []
   },
 
   /**
@@ -78,6 +79,25 @@ Page({
       price_per_day: e.detail.value.price_per_day,
       mileage: e.detail.value.mileage
     }
+
+    if (!car.car_brand || !car.car_model || !car.city || !car.price_per_day || !car.mileage) {
+      wx.showToast({
+        title: 'Missing Input',
+        icon: "error",
+        duration: 1500
+      });
+      return;
+    }
+
+    if (page.data.tempFiles.length == 0) {
+      wx.showToast({
+        title: 'Missing pictures',
+        icon: "error",
+        duration: 1500
+      });
+      return;
+    }
+
     wx.request({
       url: `${app.globalData.baseUrl}/api/v1/cars`,
       method: 'POST',
@@ -96,14 +116,14 @@ Page({
             success(res){
               console.log(res)
             },
-            // complete(){
-            //   wx.showToast({
-            //     title: "Car Added",
-            //   })
-            //   wx.switchTab({
-            //     url: '/pages/users/profile',
-            //   })
-            // }
+            complete(){
+              wx.showToast({
+                title: "Car Added",
+              })
+              wx.switchTab({
+                url: '/pages/users/profile',
+              })
+            }
           })
         });
       }
@@ -117,7 +137,6 @@ Page({
       sourceType: ['album', 'camera'],
       camera: 'back',
       success(res) {
-        console.log(res.tempFiles)
         page.setData({
           tempFiles: res.tempFiles
         })
