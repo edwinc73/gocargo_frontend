@@ -96,13 +96,13 @@ Page({
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
 
-    // if (!startDate || !endDate) {
-    //   wx.showToast({
-    //     title: 'Please select start date and end date',
-    //     icon: 'none'
-    //   });
-    //   return;
-    // }
+    if (!startDate || !endDate) {
+      wx.showToast({
+        title: 'Missing Inputs',
+        icon: "error"
+      });
+      return;
+    }
 
     wx.request({
       url: `${app.globalData.baseUrl}/api/v1/cars`,
@@ -126,7 +126,7 @@ Page({
           return;
         }
         
-        if (!validCity || !validBrand) {
+        if (!validCity) {
           wx.navigateTo({
             url: `/pages/cars/index?city=${city}&brand=${brand}&noResult=true`
           });
