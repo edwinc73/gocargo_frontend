@@ -3,16 +3,26 @@
     <image src="/images/icons/navBar/filter-light.png" mode="" class="actions filter custom-icon" />
     <image src="/images/icons/navBar/bell-light.png" mode="" class="actions bell custom-icon" />
   </view>
-  <text class="h2">Available cars in {{city}}</text>
-  <view class="card-grid">
-    <view class="card" wx:for="{{cars}}" wx:for-item="car" bindtap="goToCarsShow" wx:key="key" data-id="{{car.id}}">
-        <!-- <image src="{{item.car_image}}" class="card-image" mode="aspectFill" wx:key="key"/> -->
-        <image src="https://images.unsplash.com/photo-1612368764459-0446df792e36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-image" mode="aspectFill" wx:key="key"/>
-        <view class="car-info">
-        <text class="p">{{car.car_model}}</text>
-        <view class="p light">5.0</view>
+  <view wx:if="{{noResult}}">
+    <text class="h2">Oops, there are no results</text>
+  </view>
+  <view wx:else>
+    <text class="h2">Available cars in {{city}}</text>
+      <view class="card-grid">
+        <view class="card" wx:for="{{cars}}" wx:for-item="car" bindtap="goToCarsShow" wx:key="key" data-id="{{car.id}}">
+          <view wx:if="{{car.photos.length == 0}}">
+            <image src="{{car.car_image}}" class="card-image" mode="aspectFill"/>
+          </view>
+          <view wx:else>
+            <image src="{{car.photos[0]}}" class="card-image" mode="aspectFill"/>
+          </view>
+
+          <view class="car-info">
+            <text class="p">{{car.car_model}}</text>
+            <view class="p light">{{car.rating}}</view>
+          </view>
+        </view>
       </view>
     </view>
-  </view>
 </view>
 <CustomNav />

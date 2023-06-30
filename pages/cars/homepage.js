@@ -95,17 +95,46 @@ Page({
     const app = getApp()
     const inputs = e.detail.value
     const {city, brand, startDate, endDate} = inputs
+
+    if (!startDate || !endDate) {
+      wx.showToast({
+        title: 'Missing Input',
+        icon: "error",
+        duration: 1500
+      });
+      return;
+    }
+
     wx.request({
       url: `${app.globalData.baseUrl}/api/v1/cars`,
       header: app.globalData.header,
       success(res){
         wx.removeStorage({ key: 'cars' })
-        console.log(11111, res)
+        console.log(res)
         wx.setStorage({
           key: "cars",
           data: res.data
         })
-        app.globalData.dates = [startDate, endDate] 
+
+        const cars = res.data.cars;
+        const validCity = city === '' || cars.some(car => car.city.toLowerCase() === city.toLowerCase());
+        const validBrand = brand === '' || cars.some(car => car.car_brand.toLowerCase() === brand.toLowerCase());
+        
+        if (city === '' && brand === '') {
+          wx.navigateTo({
+            url: `/pages/cars/index`
+          });
+          return;
+        }
+        
+        if (!validCity) {
+          wx.navigateTo({
+            url: `/pages/cars/index?city=${city}&brand=${brand}&noResult=true`
+          });
+          return;
+        }
+
+        app.globalData.dates = [startDate, endDate]
         wx.navigateTo({
           url: `/pages/cars/index?city=${city}&brand=${brand}&startDate=${startDate}&endDate=${endDate}`
         })

@@ -33,8 +33,7 @@ swiper{
 }
 
 .show-owner{
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 10px 0;
 }
 
 .show-owner-detail{
@@ -47,11 +46,6 @@ swiper{
   width: 48rpx;
   height: 48rpx;
   margin-top: 20rpx;
-}
-
-.container .p{
-  align-self: start;
-  margin-bottom: 10rpx;
 }
 
 .container .rating{
@@ -100,3 +94,17 @@ swiper{
   align-items: center;
 }
 
+.title{
+  gap: 10px;
+  align-items: center;
+}
+
+.title text{
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.cars-show-text .p{
+  display: block;
+}

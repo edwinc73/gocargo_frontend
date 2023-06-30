@@ -21,10 +21,13 @@ Page({
     wx.request({
       url: `${app.globalData.baseUrl}/api/v1/cars/${page.data.id}`,
       header: app.globalData.header,
+      
       success(res){
         page.setData({
           car: res.data.car,
-          owner: res.data.owner
+          owner: res.data.owner,
+          photos: res.data.photos,
+          noPhotos : res.data.photos.length == 0
         })
         const ownerRating = res.data.owner.rating
         const carRating = res.data.car.rating
