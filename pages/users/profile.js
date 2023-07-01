@@ -1,45 +1,22 @@
 // pages/users/profile.js
+const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 
 Page({
   data: {
-
+    avatarUrl: defaultAvatarUrl,
   },
 
   onChooseAvatar(e) {
-    wx.getUserInfo({
-      success: (res) => {
-        const { userInfo } = res
-        const { nickName, avatarUrl } = userInfo
-        console.log('User\'s WeChat nickname:', nickName)
-        console.log('User\'s WeChat avatar URL:', avatarUrl)
-
-        this.setData({
-          avatarUrl,
-          nickname: nickName
-        })
-      }
-    })
+      const { avatarUrl } = e.detail 
+      this.setData({
+        avatarUrl,
+      })
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    const app = getApp()
-    const page = this
-    wx.request({
-      url: `${app.globalData.baseUrl}/api/v1/users/profile`,
-      method: "GET",
-      header: app.globalData.header,
-      success: (res) => {
-        console.log(res.data)
-        page.setData({
-          user: res.data,
-          cars: res.data.cars,
-          favourite_cars: res.data.favourite_cars
-        })
-      }
-    })
 
   },
 
@@ -54,6 +31,22 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const app = getApp()
+    const page = this
+    wx.request({
+      url: `${app.globalData.baseUrl}/api/v1/users/profile`,
+      method: "GET",
+      header: app.globalData.header,
+      success: (res) => {
+        console.log(res.data.favourite_cars)
+        page.setData({
+          user: res.data,
+          cars: res.data.cars,
+          favourite_cars: res.data.favourite_cars
+        })
+      }
+    })
+
     if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({

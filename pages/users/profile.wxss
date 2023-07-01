@@ -1,11 +1,13 @@
 .avatar-wrapper{
+  padding: 0;
   width: 150px;
-  height: 150px;
+  height: 132px;
   border-radius: 50%;
   background-color:transparent;
 }
 
 .avatar{
+  display: block;
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -13,7 +15,6 @@
 
 .user-info{
   align-items: center;
-  width: 90%;
   align-self: start;
 }
 

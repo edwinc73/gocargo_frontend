@@ -19,7 +19,7 @@
         <text class="h2">{{car.car_brand}}</text>
         <text class="p">{{car.car_model}}</text>
       </view>
-        <image class="favourite" src="/images/icons/fav/fav.png"></image>
+          <image class="favourite" src="{{favouriteImage}}" bindtap="toggleFavourite"></image>
       </view>
       <view class="rating">
         <text class="text-rating">{{carRating}}</text>
