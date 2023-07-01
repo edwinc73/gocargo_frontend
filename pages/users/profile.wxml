@@ -5,7 +5,8 @@
     </button> 
     <!-- <image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" mode="aspectFill" class="avatar"/> -->
     <view class="user-info-detail">
-      <text class="h2">Username</text>
+      <input class="h2" type="nickname" placeholder="Username"/>
+      <!-- <text class="h2">{{nickname}}</text> -->
       <view class="w-100 flex">
         <view>{{user.rating}}</view>
         <view class="stars-container">
@@ -22,14 +23,20 @@
     <hr/>
     <view class="user-cars w-100">
       <text class="h3">Cars</text>
+      <view class="user-cars-list">
+        <view class="user-cars-car-card show-card" wx:for="{{cars}}">
+          <view>{{item.car_model}}</view>
+          <image src="{{item.photos}}" mode="aspectFill" style="width:200px; height:200px"/>
+        </view>
+      </view>
     </view>
     <hr/>
     <view class="user-favourites w-100">
       <text class="h3">Favourites</text>
       <view class="user-favourite-cars-list">
-        <view class="user-favourite-car-card" wx:for="{{favourite_cars}}" wx:for-item="{{car}}">
-          {{car}}
-        <image src="{{}}" mode="aspectFill"/>
+        <view class="user-favourite-car-card show-card" wx:for="{{favourite_cars}}" >
+          {{item.car_model}}
+        <image src="{{item.photos}}" mode="aspectFill"/>
         </view>
       </view>
     </view>

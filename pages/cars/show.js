@@ -5,6 +5,15 @@ Page({
    * Page initial data
    */
   data: {
+    isFavourite: false,
+    favouriteImage: '/images/icons/fav/fav.png',
+  },
+
+  toggleFavourite: function() {
+    this.setData({
+      isFavourite: !this.data.isFavourite,
+      favouriteImage: this.data.isFavourite ? '/images/icons/fav/fav.png' : '/images/icons/fav/fav-active.png'
+    })
   },
 
   /**

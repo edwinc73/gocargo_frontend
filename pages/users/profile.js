@@ -18,21 +18,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    const app = getApp()
-    const page = this
-    wx.request({
-      url: `${app.globalData.baseUrl}/api/v1/users/profile`,
-      method: "GET",
-      header: app.globalData.header,
-      success: (res) => {
-        console.log(res.data)
-        page.setData({
-          user: res.data,
-          cars: res.data.cars,
-          favourite_cars: res.data.favourite_cars
-        })
-      }
-    })
 
   },
 
@@ -47,6 +32,22 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const app = getApp()
+    const page = this
+    wx.request({
+      url: `${app.globalData.baseUrl}/api/v1/users/profile`,
+      method: "GET",
+      header: app.globalData.header,
+      success: (res) => {
+        console.log(res.data.favourite_cars)
+        page.setData({
+          user: res.data,
+          cars: res.data.cars,
+          favourite_cars: res.data.favourite_cars
+        })
+      }
+    })
+
     if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({
