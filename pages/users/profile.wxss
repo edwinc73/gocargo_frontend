@@ -2,15 +2,21 @@
   padding: 0;
   width: 150px;
   height: 132px;
-  border-radius: 50%;
-  background-color:transparent;
+  border-radius: 30px;
+  /* background-color:transparent; */
 }
 
 .avatar{
-  display: block;
   height: 100%;
   width: 100%;
-  border-radius: 50%;
+}
+
+input{
+  padding-left: 30px;
+}
+
+.user-rating{
+  margin-left: 30px;
 }
 
 .user-info{

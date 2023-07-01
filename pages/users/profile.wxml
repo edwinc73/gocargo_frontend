@@ -7,7 +7,7 @@
     <view class="user-info-detail">
       <input class="h2" type="nickname" placeholder="Username"/>
       <!-- <text class="h2">{{nickname}}</text> -->
-      <view class="w-100 flex">
+      <view class="user-rating w-100 flex">
         <view>{{user.rating}}</view>
         <view class="stars-container">
             <image class="star-full" src="/images/icons/star/star.png"></image>
