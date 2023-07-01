@@ -1,21 +1,19 @@
 .avatar-wrapper{
-  width: 100px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  background-color:transparent;
 }
 
 .avatar{
-  height: 150px;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
 }
 
 .user-info{
   align-items: center;
-<<<<<<< HEAD
-  width: 100%;
-=======
-  width: 92%;
->>>>>>> 70b03b664f29964493a49126e8942210c137ff8e
+  width: 90%;
   align-self: start;
 }
 
