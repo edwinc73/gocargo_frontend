@@ -91,7 +91,7 @@ Page({
 
     if (page.data.tempFiles.length == 0) {
       wx.showToast({
-        title: 'Missing pictures',
+        title: 'No picture',
         icon: "error",
         duration: 1500
       });

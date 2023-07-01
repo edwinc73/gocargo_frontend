@@ -19,7 +19,9 @@
         <text class="h2">{{car.car_brand}}</text>
         <text class="p">{{car.car_model}}</text>
       </view>
-        <image class="favourite" src="/images/icons/fav/fav.png"></image>
+        <image wx:if="{{isFavourite}}" bindtap="addToFavourite" class="favourite" src="/images/icons/fav/fav-active.png"></image>
+        <image wx:else bindtap="addToFavourite" class="favourite" src="/images/icons/fav/fav.png"></image>
+
       </view>
       <view class="rating">
         <text class="text-rating">{{carRating}}</text>
