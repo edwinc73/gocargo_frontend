@@ -29,20 +29,29 @@ Page({
     page.setData({
       id: page.options.id
     })
-
     wx.request({
       url: `${app.globalData.baseUrl}/api/v1/cars/${page.data.id}`,
       header: app.globalData.header,
-      
       success(res){
+
+        let isFavourite = false
+
+        if(res.data.favourited.is_favourited){
+          isFavourite = true
+        }
+
+        console.log(isFavourite)
         page.setData({
           car: res.data.car,
           owner: res.data.owner,
           photos: res.data.photos,
           noPhotos : res.data.photos.length == 0,
           favourite: res.data.favourited,
-          isFavourite: res.data.favourited.is_favourited,
+          hasFavourite: res.data.favourited != false,
+          isFavourite: isFavourite
         })
+        console.log(res.data)
+        console.log("has fav" , res.data.favourited != false)
         const ownerRating = res.data.owner.rating
         const carRating = res.data.car.rating
         page.setData({
@@ -96,8 +105,8 @@ Page({
   addToFavourite(){
     const page = this
     const app = getApp()
-    const favourite = page.data.favourite
-    if(favourite){
+    if(page.data.hasFavourite){
+      console.log("updating")
       wx.request({
         url: `${app.globalData.baseUrl}/api/v1//favourite_cars/${page.data.favourite.id}`,
         method: "PUT",
@@ -110,15 +119,16 @@ Page({
         }
       })
     } else {
+      console.log("create")
       wx.request({
-        url: `${app.globalData.baseUrl}/api/v1//favourite_cars`,
+        url: `${app.globalData.baseUrl}/api/v1/favourite_cars`,
         method: "POST",
         header: app.globalData.header,
         data: {user_id: app.globalData.user.id, car_id:page.data.car.id, is_favourited:true},
         success(){
+          console.log("ok")
           page.setData({
-            isFavourite: true,
-            favouriteImage: '/images/icons/fav/fav-active.png'
+            isFavourite: true
           });
         }
       })
