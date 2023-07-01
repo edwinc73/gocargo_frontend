@@ -7,10 +7,11 @@ Page({
   },
 
   onChooseAvatar(e) {
-      const { avatarUrl } = e.detail 
-      this.setData({
-        avatarUrl,
-      })
+    const { avatarUrl } = e.detail 
+    console.log(avatarUrl)
+    this.setData({
+      avatarUrl,
+    })
   },
 
   /**
