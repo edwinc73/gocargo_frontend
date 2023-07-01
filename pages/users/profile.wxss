@@ -18,8 +18,28 @@
   align-self: start;
 }
 
+.car-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 27px;
+}
+
+.car-name{
+  display: column;
+}
+
 .container .rating{
   align-self: start;
+}
+
+.show-card{
+  display: flex;
+  margin: 40rpx auto;
+  border-radius: 35px;
+  background-color: rgba(217,217,217,0.35);
+  padding: 15px 20px;
+  align-items: center;
+  border: 2px solid #FFA02A;
 }
 
 .rating{

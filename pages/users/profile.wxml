@@ -23,10 +23,14 @@
     <hr/>
     <view class="user-cars w-100">
       <text class="h3">Cars</text>
-      <view class="user-cars-list">
-        <view class="user-cars-car-card show-card" wx:for="{{cars}}">
-          <view>{{item.car_model}}</view>
-          <image src="{{item.photos}}" mode="aspectFill" style="width:200px; height:200px"/>
+      <view class="user-cars-list card-grid">
+        <view class="user-cars-car-card" wx:for="{{cars}}">
+          <image class="car-image" src="{{item.photos}}" mode="aspectFill"/>
+          <view class="car-name">
+            <!-- <view class="h2">{{item.car_brand}}</view> -->
+            <view class="h3">Car Brand</view>
+            <view class="p">{{item.car_model}}</view>
+          </view>
         </view>
       </view>
     </view>
@@ -34,9 +38,13 @@
     <view class="user-favourites w-100">
       <text class="h3">Favourites</text>
       <view class="user-favourite-cars-list">
-        <view class="user-favourite-car-card show-card" wx:for="{{favourite_cars}}" >
-          {{item.car_model}}
-        <image src="{{item.photos}}" mode="aspectFill"/>
+        <view class="user-favourite-car-card show-card flex justify-between" wx:for="{{favourite_cars}}">
+          <image class="car-image" src="{{item.car_image}}" mode="aspectFill"/>
+          <view class="car-name">
+            <!-- <view class="h2">{{item.car_brand}}</view> -->
+            <view class="h2">Car Brand</view>
+            <view class="p">{{item.car_model}}</view>
+          </view>
         </view>
       </view>
     </view>
